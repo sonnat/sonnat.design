@@ -1,0 +1,148 @@
+import Divider from "@sonnat/ui/Divider";
+import Row from "@sonnat/ui/Row";
+import Column from "@sonnat/ui/Column";
+import Code from "@sonnat/ui/Code";
+import Image from "components/Image";
+import Behaviour from "components/Behaviour";
+import Anatomy from "components/Anatomy";
+import AnchorButton from "components/AnchorButton";
+import WithTableOfContent from "components/layouts/WithTableOfContent";
+import Head from "next/head";
+import { defaultKeywordsMetaContent, siteFullAddress } from "sharedVars";
+import {
+  setCanonicalMeta,
+  setDescriptionMeta,
+  setKeywordsMeta,
+  setTitleMeta
+} from "utils";
+
+export const meta = {
+  title: "ردیف ارزیابی",
+  description:
+    "ارزیابی رضایت کاربران و امکان مقایسهٔ کل‌نگر میان بخش‌ها و خدمات گوناگون محصول نیاز به روشی برای جمع‌آوری دادهٔ مورد نیاز از کاربران آن محصول دارد. این کامپوننت امکان تهیهٔ این داده را به‌شکلی قابل فهم، بسط‌پذیر و یکپارچه فراهم می‌کند.",
+  getLayout: () => page =>
+    (
+      <WithTableOfContent
+        tableData={[
+          { id: "معرفی", label: "معرفی" },
+          { id: "کاربرد", label: "کاربرد" },
+          { id: "انواع", label: "انواع" }
+        ]}
+      >
+        {page}
+      </WithTableOfContent>
+    )
+};
+
+<Head>
+  {setTitleMeta(`${meta.title} | دیزاین سیستم سنّت`)}
+  {setDescriptionMeta(meta.description)}
+  {setCanonicalMeta(`${siteFullAddress}/components/divar/RateRow`)}
+  {setKeywordsMeta([...defaultKeywordsMetaContent, "rate row"])}
+</Head>
+
+<h1>
+  <span>{meta.title}</span>
+  <AnchorButton anchorId="معرفی" />
+</h1>
+
+<p data-subtitle>
+  ردیف ارزیابی با ستاره، ردیف ارزیابی با ایموجی (Emoji)، ردیف ارزیابی دوتایی
+  (Boolean)
+</p>
+
+<p>{meta.description}</p>
+
+<h2>
+  <span>کاربرد</span>
+  <AnchorButton anchorId="کاربرد" />
+</h2>
+
+<p>
+  از کامپوننت ردیف ارزیابی برای بازخورد گرفتن از کاربرها و اندازه‌گیری میزان
+  رضایت آن‌ها از امکانات محصول استفاده می‌شود. هنگام استفاده از این کامپوننت
+  باید اطمینان داشت برای سنجش بخش مورد نظر محصول و بازخورد گرفتن بهترین ابزار
+  همین کامپوننت است.
+  <br />
+  متنی که برای بازخورد گرفتن به کاربر نمایش می‌دهید باید شفاف باشد تا کاربر
+  کاملاً متوجه موضوعی که دربارهٔ آن بازخورد می‌گیرید بشود.
+  <br />
+  همچنین در ردیف ارزیابی، بعد از گرفتن بازخورد ابتدایی می‌توان با گرفتن توضیحات
+  کاربر دربارهٔ دلیل امتیاز یا انتخاب او بازخورد کامل‌تری ثبت کرد.
+</p>
+
+<Divider spaced />
+
+<h2>
+  <span>انواع</span>
+  <AnchorButton anchorId="انواع" />
+</h2>
+
+<h3>
+  <span>ردیف ارزیابی با ستاره</span>
+  <AnchorButton anchorId="ردیف ارزیابی با ستاره" />
+</h3>
+
+<p>
+  زمانی که لازم باشد محصولی به کاربر معرفی شود (مانند یک برند خودرو) و
+  بازخوردهای کاربران دربارهٔ کیفیت آن گرفته شده و میانگین آن به سایر کاربران
+  نمایش داده شود از این کامپوننت استفاده می‌شود. در این نوع از ردیف ارزیابی برای
+  فهم بهتر کاربر از مقادیر از راهنمای ابزار استفاده می‌شود.
+</p>
+
+<Image
+  caption="ردیف ارزیابی با ستاره"
+  imageProps={{
+    src: "/static/media/rate-row-1.svg",
+    alt: "ردیف ارزیابی با ستاره",
+    unoptimized: true,
+    width: 860,
+    height: 176
+  }}
+/>
+
+<Divider dotted />
+
+<h3>
+  <span>ردیف ارزیابی با ایموجی (Emoji)</span>
+  <AnchorButton anchorId="ردیف ارزیابی با ایموجی (Emoji)" />
+</h3>
+
+<p>
+  زمانی از این کامپوننت استفاده می‌شود که لازم باشد کاربر بخشی از محصول با
+  محتوای متفاوت را یکجا ارزیابی کند.
+</p>
+
+<Image
+  caption="ردیف ارزیابی با ایموجی"
+  imageProps={{
+    src: "/static/media/rate-row-2.svg",
+    alt: "ردیف ارزیابی با ایموجی",
+    unoptimized: true,
+    width: 860,
+    height: 176
+  }}
+/>
+
+<Divider dotted />
+
+<h3>
+  <span>ردیف ارزیابی دوتایی (Boolean)</span>
+  <AnchorButton anchorId="ردیف ارزیابی دوتایی (Boolean)" />
+</h3>
+
+<p>
+  زمانی از این کامپوننت استفاده می‌شود که لازم باشد کاربر تنها یک بخش از محصول
+  را ارزیابی کند.
+</p>
+
+<Image
+  caption="ردیف ارزیابی دوتایی"
+  imageProps={{
+    src: "/static/media/rate-row-3.svg",
+    alt: "ردیف ارزیابی دوتایی",
+    unoptimized: true,
+    width: 860,
+    height: 176
+  }}
+/>

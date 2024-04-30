@@ -1,0 +1,144 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="356" height="297" viewBox="0 0 356 297">
+  <defs>
+    <path id="usage-b" d="M7.17006468,61.0038217 L106.889569,110.472658 C111.369385,112.695005 116.630615,112.695005 121.110431,110.472658 L220.836651,61.0004901 C222.815659,60.0187444 223.624099,57.6185797 222.642353,55.6395723 C222.257954,54.8646985 221.632733,54.2353072 220.860431,53.8457656 L117.705747,1.81551259 C115.441741,0.673569152 112.770413,0.672567858 110.505551,1.81281374 L7.14896249,53.8477478 C5.17577946,54.8411479 4.38150848,57.2460387 5.37490862,59.2192218 C5.76433243,59.9927313 6.39427192,60.6189665 7.17006468,61.0038217 Z"/>
+    <filter id="usage-a" width="114.3%" height="134.8%" x="-7.2%" y="-12.5%" filterUnits="objectBoundingBox">
+      <feMorphology in="SourceAlpha" operator="dilate" radius=".25" result="shadowSpreadOuter1"/>
+      <feOffset dy="6" in="shadowSpreadOuter1" result="shadowOffsetOuter1"/>
+      <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="6"/>
+      <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"/>
+      <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.08 0"/>
+    </filter>
+    <path id="usage-d" d="M7.17006468,58.9881411 L102.889569,106.472658 C107.369385,108.695005 112.630615,108.695005 117.110431,106.472658 L212.836651,58.9848095 C214.815659,58.0030638 215.624099,55.6028991 214.642353,53.6238917 C214.257954,52.8490179 213.632733,52.2196266 212.860431,51.830085 L113.702016,1.81551259 C111.43801,0.673569152 108.766682,0.672567858 106.50182,1.81281374 L7.14896249,51.8320672 C5.17577946,52.8254673 4.38150848,55.2303581 5.37490862,57.2035412 C5.76433243,57.9770507 6.39427192,58.6032859 7.17006468,58.9881411 Z"/>
+    <filter id="usage-c" width="114.6%" height="135.6%" x="-7.3%" y="-12.8%" filterUnits="objectBoundingBox">
+      <feOffset dy="6" in="SourceAlpha" result="shadowOffsetOuter1"/>
+      <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="6"/>
+      <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"/>
+      <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.12 0"/>
+    </filter>
+    <path id="usage-f" d="M8.09734501,39.1767329 L62.8168489,66.3219762 C67.2966657,68.544323 72.5578949,68.544323 77.0377118,66.3219762 L131.763931,39.1734013 C133.742939,38.1916556 134.551379,35.7914909 133.569634,33.8124835 C133.185234,33.0376097 132.560013,32.4082184 131.787711,32.0186768 L73.5910554,2.66483054 C71.3270492,1.5228871 68.6557211,1.52188581 66.3908595,2.66213169 L8.07624282,32.020659 C6.10305979,33.0140591 5.30878881,35.4189499 6.30218895,37.392133 C6.69161277,38.1656425 7.32155225,38.7918777 8.09734501,39.1767329 Z"/>
+    <filter id="usage-e" width="123.6%" height="157.5%" x="-11.8%" y="-20.7%" filterUnits="objectBoundingBox">
+      <feMorphology in="SourceAlpha" operator="dilate" radius=".25" result="shadowSpreadOuter1"/>
+      <feOffset dy="6" in="shadowSpreadOuter1" result="shadowOffsetOuter1"/>
+      <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="6"/>
+      <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"/>
+      <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.24 0"/>
+    </filter>
+    <ellipse id="usage-h" cx="10.5" cy="5.5" rx="10.5" ry="5.5"/>
+    <filter id="usage-g" width="302.4%" height="486.4%" x="-101.2%" y="-138.6%" filterUnits="objectBoundingBox">
+      <feMorphology in="SourceAlpha" operator="dilate" radius=".25" result="shadowSpreadOuter1"/>
+      <feOffset dy="6" in="shadowSpreadOuter1" result="shadowOffsetOuter1"/>
+      <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="6"/>
+      <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"/>
+      <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.24 0"/>
+    </filter>
+    <style>
+  @keyframes dimmer{
+      0%{
+        opacity:0;
+        transform: translate(0px, -48px) scale(1)
+      }
+      20%{
+        opacity:0;
+        transform: translate(4px, -48px) scale(1)
+      }
+            36%{
+        opacity:1;
+        transform: translate(4px, 8px) scale(1)
+      }
+                  80%{
+        opacity:1;
+        transform: translate(4px, 8px) scale(1)
+      }
+                  86%{
+         opacity:0;
+        transform: translate(4px, -48px) scale(1)
+      }
+                  100%{
+        opacity:0;
+        transform: translate(4px, -48px) scale(1)
+      }
+    }
+@keyframes modal{
+      0%{
+        opacity:0;
+        transform: translate(43.673px, -48px) scale(1)
+      }
+      28%{
+        opacity:0;
+        transform: translate(43.673px, -48px) scale(1)
+      }
+      40%{
+        opacity:1;
+        transform: translate(43.673px, 22px) scale(1)
+      }
+      72%{
+        opacity:1;
+        transform: translate(43.673px, 22px) scale(1)
+      }
+      84%{
+            opacity:0;
+        transform: translate(43.673px, -48px) scale(1)
+      }
+            100%{
+            opacity:0;
+        transform: translate(43.673px, -48px) scale(1)
+      }
+}
+@keyframes btn{
+      0%{
+        opacity:0;
+        transform: translate(102.6px, -24px) scale(1)
+      }
+      36%{
+        opacity:0;
+        transform: translate(102.6px, -24px) scale(1)
+      }
+      48%{
+        opacity:1;
+        transform: translate(102.6px, 64px) scale(1)
+      }
+      68%{
+        opacity:1;
+        transform: translate(102.6px, 64px) scale(1)
+      }
+      72%{
+            opacity:0;
+        transform: translate(102.6px, -24px) scale(1)
+      }
+            100%{
+            opacity:0;
+        transform: translate(102.6px, -24px) scale(1)
+      }
+}
+    </style>
+  </defs>
+  <g fill="none" fill-rule="evenodd">
+    <rect width="356" height="297"/>
+    <g transform="translate(64.4 80.263)">
+    <!-- app -->
+      <g transform="translate(0 21)"  >
+        <path fill="#FFF" stroke="#000000" stroke-opacity=".12" stroke-width=".5" d="M7.17006468,63.0038217 L106.889569,112.472658 C111.369385,114.695005 116.630615,114.695005 121.110431,112.472658 L220.836651,63.0004901 C222.815659,62.0187444 223.624099,59.6185797 222.642353,57.6395723 C222.257954,56.8646985 221.632733,56.2353072 220.860431,55.8457656 L117.705747,3.81551259 C115.441741,2.67356915 112.770413,2.67256786 110.505551,3.81281374 L7.14896249,55.8477478 C5.17577946,56.8411479 4.38150848,59.2460387 5.37490862,61.2192218 C5.76433243,61.9927313 6.39427192,62.6189665 7.17006468,63.0038217 Z"/>
+        <use fill="#000" filter="url(#usage-a)" xlink:href="#usage-b"/>
+        <use fill="#FFF" stroke="#000000" stroke-opacity=".12" stroke-width=".5" xlink:href="#usage-b"/>
+        <line x1="15.514" x2="129.066" y1="64.951" y2="7.598" stroke="#000000" stroke-opacity=".24" stroke-width=".2"/>
+      </g>
+      <!-- dimmer -->
+      <g transform="translate(4)" style="animation: dimmer 6000ms ease infinite;transform-origin:100px 80px">
+        <use fill="#000" filter="url(#usage-c)" xlink:href="#usage-d"/>
+        <use fill="#000000" fill-opacity=".48" xlink:href="#usage-d"/>
+      </g>
+      <!-- modal -->
+      <g transform="translate(43.673 12.888)" style="animation: modal 6000ms ease infinite;transform-origin:100px 80px">
+        <path fill="#FFF" stroke="#000000" stroke-opacity=".12" stroke-width=".5" d="M8.09734501,40.1767329 L62.8168489,67.3219762 C67.2966657,69.544323 72.5578949,69.544323 77.0377118,67.3219762 L131.763931,40.1734013 C133.742939,39.1916556 134.551379,36.7914909 133.569634,34.8124835 C133.185234,34.0376097 132.560013,33.4082184 131.787711,33.0186768 L73.5910554,3.66483054 C71.3270492,2.5228871 68.6557211,2.52188581 66.3908595,3.66213169 L8.07624282,33.020659 C6.10305979,34.0140591 5.30878881,36.4189499 6.30218895,38.392133 C6.69161277,39.1656425 7.32155225,39.7918777 8.09734501,40.1767329 Z"/>
+        <use fill="#000" filter="url(#usage-e)" xlink:href="#usage-f"/>
+        <use fill="#FFF" stroke="#000000" stroke-opacity=".12" stroke-width=".5" xlink:href="#usage-f"/>
+      </g>
+  <!-- btn -->
+      <g transform="translate(102.6 49.737)" style="animation: btn 6000ms ease infinite;transform-origin:100px 80px">
+        <ellipse cx="10.5" cy="6.5" fill="#EA475B" stroke="#000000" stroke-opacity=".12" stroke-width=".5" rx="10.5" ry="5.5"/>
+        <use fill="#000" filter="url(#usage-g)" xlink:href="#usage-h"/>
+        <use fill="#EA475B" stroke="#000000" stroke-opacity=".12" stroke-width=".5" xlink:href="#usage-h"/>
+      </g>
+    </g>
+  </g>
+</svg>

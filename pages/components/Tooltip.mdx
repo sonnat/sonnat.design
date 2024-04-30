@@ -1,0 +1,349 @@
+import Divider from "@sonnat/ui/Divider";
+import Row from "@sonnat/ui/Row";
+import Column from "@sonnat/ui/Column";
+import Code from "@sonnat/ui/Code";
+import Image from "components/Image";
+import Behaviour from "components/Behaviour";
+import Anatomy from "components/Anatomy";
+import AnchorButton from "components/AnchorButton";
+import WithTableOfContent from "components/layouts/WithTableOfContent";
+import Head from "next/head";
+import { defaultKeywordsMetaContent, siteFullAddress } from "sharedVars";
+import {
+  setCanonicalMeta,
+  setDescriptionMeta,
+  setKeywordsMeta,
+  setTitleMeta
+} from "utils";
+
+export const meta = {
+  title: "راهنمای ابزار",
+  description:
+    "راهنمای ابزار متن شناور و کنش‌ناپذیری است که با حرکت‌دادن یا نگه‌داشتن موس، ضربه‌زدن یا کلیک‌کردن روی المانی ظاهر می‌شود و راهنمای تکمیلی دربارهٔ آن را نشان می‌دهد.",
+  getLayout: () => page =>
+    (
+      <WithTableOfContent
+        tableData={[
+          { id: "معرفی", label: "معرفی" },
+          { id: "کاربرد", label: "کاربرد" },
+          { id: "انواع", label: "انواع" },
+          { id: "آناتومی", label: "آناتومی" },
+          { id: "رفتار", label: "رفتار" },
+          { id: "نگارش", label: "نگارش" }
+        ]}
+      >
+        {page}
+      </WithTableOfContent>
+    )
+};
+
+<Head>
+  {setTitleMeta(`${meta.title} | دیزاین سیستم سنّت`)}
+  {setDescriptionMeta(meta.description)}
+  {setCanonicalMeta(`${siteFullAddress}/components/Tooltip`)}
+  {setKeywordsMeta([...defaultKeywordsMetaContent, "tooltip", "راهنمای ابزار"])}
+</Head>
+
+<h1>
+  <span>{meta.title}</span>
+  <AnchorButton anchorId="معرفی" />
+</h1>
+
+<p>{meta.description}</p>
+
+<h2>
+  <span>کاربرد</span>
+  <AnchorButton anchorId="کاربرد" />
+</h2>
+
+<p>
+  راهنمای ابزار برای نمایش اطلاعات تکمیلی و مرتبط با مضمون استفاده می‌شود. برای
+  نمایش محتواهای ضروری یا پیام‌های خطا که حتماً باید خوانده شوند، نباید از
+  راهنمای ابزار استفاده شود.
+</p>
+
+<p>راهنمای ابزار می‌تواند در این موارد استفاده شود:</p>
+
+<ul>
+  <li>تعریف‌کردن کاربرد آیکون‌ها یا محتواهای تصویری کنش‌ناپذیر.</li>
+  <li>
+    تعریف‌کردن کاربرد یا بسط‌ دادن اطلاعات دربارهٔ بخشی از رابط کاربر که روی آن
+    ظاهر می‌شود.
+  </li>
+</ul>
+
+<p>
+  راهنمای ابزار باید در جایی قرار بگیرد که همیشه دیده شود. همچنین می‌تواند در
+  چهار جهت اصلی محل استفاده (بالا، پایین، چپ، راست) نیز استفاده شود. اگر راهنمای
+  ابزار در حالت واکنش‌گرا بیرون از صفحه قرار بگیرد، با اصلاح محل‌ ظاهر شدن خود
+  به نقطه‌ی مقابل جهت تعیین‌شده منتقل می‌شود.
+</p>
+
+<h3>
+  <span>راهنمای ابزار آیکون‌دار</span>
+  <AnchorButton anchorId="راهنمای ابزار آیکون‌دار" />
+</h3>
+
+<p>
+  راهنمای ابزار آیکون‌دار زمانی استفاده می‌شود که آیکون به انتقال مفهوم المان
+  کمک کند. اگر محتوای متنی برای انتقال مفهوم کافی باشد، نیازی به اضافه‌کردن
+  آیکون نیست.
+</p>
+
+<Divider spaced />
+
+<h2>
+  <span>انواع</span>
+  <AnchorButton anchorId="انواع" />
+</h2>
+
+<h3>
+  <span>راهنمای ابزاری که با ورود موس نمایش داده می شود</span>
+  <AnchorButton anchorId="راهنمای ابزاری که با ورود موس نمایش داده می شود" />
+</h3>
+
+<p>در این حالت با قرارگرفتن موس روی محل استفاده، راهنمای ابزار ظاهر می‌شود.</p>
+
+<Image
+  imageProps={{
+    src: "/static/media/tooltip-variation-1.svg",
+    alt: "راهنمای ابزاری که با ورود موس نمایش داده می شود",
+    unoptimized: true,
+    width: 422,
+    height: 202
+  }}
+/>
+
+<Divider dotted />
+
+<h3>
+  <span>راهنمای ابزاری که بعد از کنش یا کلیک نمایش داده می‌شود</span>
+  <AnchorButton anchorId="راهنمای ابزاری که بعد از کنش یا کلیک نمایش داده می‌شود" />
+</h3>
+
+<p>
+  در این حالت بعد از کلیک‌کردن یا ضربه‌زدن روی محل استفاده، راهنمای ابزار ظاهر
+  می‌شود. برای این نوع از راهنمای ابزار بهتر است از حالت تیره استفاده شود.
+</p>
+
+<Image
+  imageProps={{
+    src: "/static/media/tooltip-variation-2.svg",
+    alt: "راهنمای ابزاری که بعد از کنش یا کلیک نمایش داده می‌شود",
+    unoptimized: true,
+    width: 422,
+    height: 202
+  }}
+/>
+
+<Divider dotted />
+
+<h3>
+  <span>راهنمای ابزاری که موس را دنبال می‌‌کند</span>
+  <AnchorButton anchorId="راهنمای ابزاری که موس را دنبال می‌‌کند" />
+</h3>
+
+<p>در این حالت راهنمای ابزار حرکت موس را در محل استفاده دنبال می‌کند.</p>
+
+<Image
+  imageProps={{
+    src: "/static/media/tooltip-variation-3.svg",
+    alt: "راهنمای ابزاری که موس را دنبال می‌‌کند",
+    unoptimized: true,
+    width: 422,
+    height: 202
+  }}
+/>
+
+<div>
+  <p></p>
+  <Divider spaced />
+</div>
+
+<h2>
+  <span>آناتومی</span>
+  <AnchorButton anchorId="آناتومی" />
+</h2>
+
+<p>
+  اینجا می‌توانید ابعاد راهنمای ابزار، فاصله‌ها، حاشیه‌ها و اندازهٔ متن و آیکون
+  را در موقعیت‌های معمولی، دنباله‌دار و آیکون‌دار ببینید.
+</p>
+
+<div data-columnWrapper>
+  <Row>
+    <Column all="12" sm="6">
+      <div data-column>
+        <Anatomy
+          caption="راهنمای ابزار"
+          imageProps={{
+            mainSrc: "/static/media/tooltip-anatomy-1.svg",
+            specSrc: "/static/media/tooltip-anatomy-1-spec.svg",
+            alt: "راهنمای ابزار",
+            unoptimized: true,
+            width: 236,
+            height: 220
+          }}
+        />
+      </div>
+    </Column>
+    <Column all="12" sm="6">
+      <div data-column>
+        <Anatomy
+          caption="راهنمای ابزار آیکون‌دار"
+          imageProps={{
+            mainSrc: "/static/media/tooltip-anatomy-2.svg",
+            specSrc: "/static/media/tooltip-anatomy-2-spec.svg",
+            alt: "راهنمای ابزار آیکون‌دار",
+            unoptimized: true,
+            width: 236,
+            height: 220
+          }}
+        />
+      </div>
+    </Column>
+    <Column all="12" sm="6">
+      <div data-column>
+        <Anatomy
+          caption="راهنمای ابزار دنباله‌دار"
+          imageProps={{
+            mainSrc: "/static/media/tooltip-anatomy-3.svg",
+            specSrc: "/static/media/tooltip-anatomy-3-spec.svg",
+            alt: "راهنمای ابزار دنباله‌دار",
+            unoptimized: true,
+            width: 236,
+            height: 220
+          }}
+        />
+      </div>
+    </Column>
+  </Row>
+</div>
+
+<div>
+  <p></p>
+  <Divider spaced />
+</div>
+
+<h2>
+  <span>رفتار</span>
+  <AnchorButton anchorId="رفتار" />
+</h2>
+
+<p>
+  در راهنمای زیر رفتار کامپوننت در کاربردهای مختلف دیزاین توضیح داده شده است.
+</p>
+
+<div data-columnWrapper>
+  <Row>
+    <Column all="12" sm="6">
+      <div data-column>
+        <Behaviour
+          variant="dont"
+          caption="متن راهنمای ابزار باید تکمیل‌کننده‌ی محتوای المان باشد و نباید متن المان مورد نظر را تکرار کند."
+          imageProps={{
+            src: "/static/media/tooltip-behaviour-1.svg",
+            alt: "متن راهنمای ابزار باید تکمیل‌کننده‌ی محتوای المان باشد و نباید متن المان مورد نظر را تکرار کند.",
+            unoptimized: true,
+            width: 422,
+            height: 368
+          }}
+        />
+      </div>
+    </Column>
+    <Column all="12" sm="6">
+      <div data-column>
+        <Behaviour
+          variant="dont"
+          caption="در راهنمای ابزار از عکس استفاده نکنید."
+          imageProps={{
+            src: "/static/media/tooltip-behaviour-2.svg",
+            alt: "در راهنمای ابزار از عکس استفاده نکنید.",
+            unoptimized: true,
+            width: 422,
+            height: 368
+          }}
+        />
+      </div>
+    </Column>
+    <Column all="12" sm="6">
+      <div data-column>
+        <Behaviour
+          variant="dont"
+          caption="راهنمای ابزار فقط برای نمایش اطلاعات است و نباید هیچ کنشی مثل دکمه یا لینک درون آن قرار بگیرد."
+          imageProps={{
+            src: "/static/media/tooltip-behaviour-3.svg",
+            alt: "راهنمای ابزار فقط برای نمایش اطلاعات است و نباید هیچ کنشی مثل دکمه یا لینک درون آن قرار بگیرد.",
+            unoptimized: true,
+            width: 422,
+            height: 368
+          }}
+        />
+      </div>
+    </Column>
+    <Column all="12" sm="6">
+      <div data-column>
+        <Behaviour
+          variant="dont"
+          caption="متن راهنمای ابزار باید مختصر و مفید باشد و بیشتر از ۲ خط نشود. اگر متن طولانی باشد، باید از کامپوننت دیگری برای نمایش آن استفاده شود."
+          imageProps={{
+            src: "/static/media/tooltip-behaviour-4.svg",
+            alt: "متن راهنمای ابزار باید مختصر و مفید باشد و بیشتر از ۲ خط نشود. اگر متن طولانی باشد، باید از کامپوننت دیگری برای نمایش آن استفاده شود.",
+            unoptimized: true,
+            width: 422,
+            height: 368
+          }}
+        />
+      </div>
+    </Column>
+    <Column all="12" sm="6">
+      <div data-column>
+        <Behaviour
+          variant="warning"
+          caption="تا حد امکان المانی را که ابزار راهنما روی آن ظاهر می‌شود، نپوشانید."
+          imageProps={{
+            src: "/static/media/tooltip-behaviour-5.svg",
+            alt: "تا حد امکان المانی را که ابزار راهنما روی آن ظاهر می‌شود، نپوشانید.",
+            unoptimized: true,
+            width: 422,
+            height: 368
+          }}
+        />
+      </div>
+    </Column>
+    <Column all="12" sm="6">
+      <div data-column>
+        <Behaviour
+          variant="do"
+          caption="مدت نمایش «راهنمای ابزار بعد از کنش یا کلیک» ۱.۵ ثانیه بعد از کنش است. اگر در این مدت لازم بود راهنمای ابزار دیگری ظاهر شود، راهنمای ابزار قبلی حذف می‌شود."
+          imageProps={{
+            src: "/static/media/tooltip-behaviour-6.svg",
+            alt: "مدت نمایش «راهنمای ابزار بعد از کنش یا کلیک» ۱.۵ ثانیه بعد از کنش است. اگر در این مدت لازم بود راهنمای ابزار دیگری ظاهر شود، راهنمای ابزار قبلی حذف می‌شود.",
+            unoptimized: true,
+            width: 422,
+            height: 368
+          }}
+        />
+      </div>
+    </Column>
+  </Row>
+</div>
+
+<div>
+  <p></p>
+  <Divider spaced />
+</div>
+
+<h2>
+  <span>نگارش</span>
+  <AnchorButton anchorId="نگارش" />
+</h2>
+
+<ul>
+  <li>متن راهنمای ابزار نباید بیشتر از ۲ خط شود.</li>
+  <li>متن راهنمای ابزار باید مختصر، مفید و مفهوم باشد.</li>
+  <li>
+    راهنمای ابزار نباید حاوی اطلاعات مهم مانند پیام‌های خطا یا اطلاعات حساب
+    کاربر باشد.
+  </li>
+</ul>

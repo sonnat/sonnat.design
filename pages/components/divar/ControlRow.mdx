@@ -1,0 +1,145 @@
+import Divider from "@sonnat/ui/Divider";
+import Row from "@sonnat/ui/Row";
+import Column from "@sonnat/ui/Column";
+import Code from "@sonnat/ui/Code";
+import Image from "components/Image";
+import Behaviour from "components/Behaviour";
+import Anatomy from "components/Anatomy";
+import AnchorButton from "components/AnchorButton";
+import WithTableOfContent from "components/layouts/WithTableOfContent";
+import Head from "next/head";
+import { defaultKeywordsMetaContent, siteFullAddress } from "sharedVars";
+import {
+  setCanonicalMeta,
+  setDescriptionMeta,
+  setKeywordsMeta,
+  setTitleMeta
+} from "utils";
+
+export const meta = {
+  title: "ردیف کنترل",
+  description:
+    "ردیف‌های کنترل‌، انتخاب از میان یک یا چند گزینه را فراهم می‌کنند.",
+  getLayout: () => page =>
+    (
+      <WithTableOfContent
+        tableData={[
+          { id: "معرفی", label: "معرفی" },
+          { id: "کاربرد", label: "کاربرد" },
+          { id: "انواع", label: "انواع" }
+        ]}
+      >
+        {page}
+      </WithTableOfContent>
+    )
+};
+
+<Head>
+  {setTitleMeta(`${meta.title} | دیزاین سیستم سنّت`)}
+  {setDescriptionMeta(meta.description)}
+  {setCanonicalMeta(`${siteFullAddress}/components/divar/ControlRow`)}
+  {setKeywordsMeta([...defaultKeywordsMetaContent, "control row"])}
+</Head>
+
+<h1>
+  <span>{meta.title}</span>
+  <AnchorButton anchorId="معرفی" />
+</h1>
+
+<p data-subtitle>
+  ردیف کنترل رادیویی (RadioButtonRow)، ردیف کنترل چک‌باکس(CheckboxRow)، ردیف
+  کنترل کلید (SwitchRow)
+</p>
+
+<p>{meta.description}</p>
+
+<h2>
+  <span>کاربرد</span>
+  <AnchorButton anchorId="کاربرد" />
+</h2>
+
+<p>
+  این کامپوننت‌ امکان انتخاب گزینه‌ها در فرم‌ها و یا خاموش و روشن کردن تنظیمات و
+  تغییر وضعیت‌های موجود در محصول را میسر می‌کند. آیکون در ابتدای ردیف کنترل
+  چک‌باکس و کلید برای واضح‌تر شدن عنوان کاربرد دارد.
+  <br />
+  در طراحی این کامپوننت بسته به نوع کاربرد از انواع کامپوننت کنترل‌ انتخاب
+  استفاده می‌شود.
+</p>
+
+<Divider spaced />
+
+<h2>
+  <span>انواع</span>
+  <AnchorButton anchorId="انواع" />
+</h2>
+
+<h3>
+  <span>ردیف کنترل رادیویی</span>
+  <AnchorButton anchorId="ردیف کنترل رادیویی" />
+</h3>
+
+<p>
+  زمانی که لازم باشد کاربر تمام گزینه‌های موجود در فرم یا لیست را ببیند اما فقط
+  یکی از آن‌ها را انتخاب کند، از این کامپوننت استفاده می‌شود.
+</p>
+
+<Image
+  caption="ردیف کنترل رادیویی"
+  imageProps={{
+    src: "/static/media/control-row-1.svg",
+    alt: "ردیف کنترل رادیویی",
+    unoptimized: true,
+    width: 860,
+    height: 320
+  }}
+/>
+
+<Divider dotted />
+
+<h3>
+  <span>ردیف کنترل چک‌باکس</span>
+  <AnchorButton anchorId="ردیف کنترل چک‌باکس" />
+</h3>
+
+<p>
+  زمانی که لازم باشد کاربر تمام گزینه‌های موجود در فرم یا لیست را ببیند و امکان
+  انتخاب یک یا چند گزینه را داشته باشد، از این کامپوننت استفاده می‌شود.
+  <br />
+  در صورت نیاز به شفافیتِ انتخاب‌های پیش روی کاربر از ردیف کنترل چک‌باکس با
+  توضیحات استفاده می‌شود.
+</p>
+
+<Image
+  caption="ردیف کنترل چک‌باکس"
+  imageProps={{
+    src: "/static/media/control-row-2.svg",
+    alt: "ردیف کنترل چک‌باکس",
+    unoptimized: true,
+    width: 860,
+    height: 490
+  }}
+/>
+
+<Divider dotted />
+
+<h3>
+  <span>ردیف کنترل کلید</span>
+  <AnchorButton anchorId="ردیف کنترل کلید" />
+</h3>
+
+<p>
+  زمانی که لازم باشد وضعیت المانی روشن یا خاموش شود از این کامپوننت استفاده
+  می‌شود.
+</p>
+
+<Image
+  caption="ردیف کنترل کلید"
+  imageProps={{
+    src: "/static/media/control-row-3.svg",
+    alt: "ردیف کنترل کلید",
+    unoptimized: true,
+    width: 860,
+    height: 320
+  }}
+/>

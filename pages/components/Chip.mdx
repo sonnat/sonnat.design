@@ -1,0 +1,384 @@
+import Divider from "@sonnat/ui/Divider";
+import Row from "@sonnat/ui/Row";
+import Column from "@sonnat/ui/Column";
+import Code from "@sonnat/ui/Code";
+import Image from "components/Image";
+import ChipDemo from "components/demos/ChipDemo";
+import Behaviour from "components/Behaviour";
+import Anatomy from "components/Anatomy";
+import AnchorButton from "components/AnchorButton";
+import WithTableOfContent from "components/layouts/WithTableOfContent";
+import Head from "next/head";
+import { defaultKeywordsMetaContent, siteFullAddress } from "sharedVars";
+import {
+  setCanonicalMeta,
+  setDescriptionMeta,
+  setKeywordsMeta,
+  setTitleMeta
+} from "utils";
+
+export const meta = {
+  title: "چیپس",
+  description:
+    "چیپس‌ها عناصری کم‌حجم و کوچک‌اند که اغلب در گروه‌های ۲تایی یا بیشتر کنار هم قرار می‌گیرند و فضای کمی را اشغال می‌کنند. چیپس‌ها انتخاب و فیلتر محتوا، تعیین و حذف دادهٔ ورودی و کنش را در رابط کاربر فراهم می‌کنند.",
+  getLayout: () => page =>
+    (
+      <WithTableOfContent
+        tableData={[
+          { id: "معرفی", label: "معرفی" },
+          { id: "دموی تعاملی", label: "دموی تعاملی" },
+          { id: "کاربرد", label: "کاربرد" },
+          { id: "انواع", label: "انواع" },
+          { id: "آناتومی", label: "آناتومی" },
+          { id: "رفتار", label: "رفتار" },
+          { id: "نگارش", label: "نگارش" }
+        ]}
+      >
+        {page}
+      </WithTableOfContent>
+    )
+};
+
+<Head>
+  {setTitleMeta(`${meta.title} | دیزاین سیستم سنّت`)}
+  {setDescriptionMeta(meta.description)}
+  {setCanonicalMeta(`${siteFullAddress}/components/Chip`)}
+  {setKeywordsMeta([...defaultKeywordsMetaContent, "chip", "چیپس"])}
+</Head>
+
+<h1>
+  <span>{meta.title}</span>
+  <AnchorButton anchorId="معرفی" />
+</h1>
+
+<p data-subtitle>چیپس‌ توپر (Filled) و توخالی (Outlined)</p>
+
+<p>{meta.description}</p>
+
+<h2>
+  <span>دموی تعاملی</span>
+  <AnchorButton anchorId="دموی تعاملی" />
+</h2>
+
+<ChipDemo />
+
+<h2>
+  <span>کاربرد</span>
+  <AnchorButton anchorId="کاربرد" />
+</h2>
+
+<p>
+  چیپس‌ها ورود اطلاعات، انتخاب یک یا چند گزینه، فیلتر کردن محتوا یا شروع کنش را
+  برای کاربر میسر می‌کنند. در مقابلِ دکمه که تکی و ثابت در صفحه استفاده می‌شود،
+  چیپس‌ها در صورت نیاز در صفحه ظاهر شده و به شکل‌های زیر از آن‌ها استفاده
+  می‌شود:
+</p>
+
+<h3>
+  <span>چیپس کنش‌پذیر (Action Chip)</span>
+  <AnchorButton anchorId="چیپس کنش‌پذیر (Action Chip)" />
+</h3>
+
+<p>
+  برای کنش در محتوای اصلی،‌ چیپس‌های کنش‌پذیر به شکلی پویا در صفحه ظاهر می‌شوند
+  و می‌توانند به لینک تبدیل شوند. چیپس‌های کنش‌پذیر را می‌توان با دکمه‌ای ثابت
+  در صفحه جایگزین کرد.
+</p>
+
+<Divider dotted />
+
+<h3>
+  <span>چیپس انتخابی (Choice Chip)</span>
+  <AnchorButton anchorId="چیپس انتخابی (Choice Chip)" />
+</h3>
+
+<p>
+  کاربر با استفاده از این کامپوننت می‌تواند بین تعدادی چیپس، یکی را انتخاب کند.
+  چیپس‌های انتخابی دو نوع تک ‌انتخابی و چند انتخابی دارند.
+</p>
+
+<ul>
+  <li>
+    <strong>چیپس‌های تک ‌انتخابی:</strong> جایگزین مناسبی برای منو‌های تک
+    ‌انتخابی، کلید‌های رادیویی و کلید‌های تاگل‌ هستند.
+  </li>
+  <li>
+    <strong>چیپس‌های چند ‌انتخابی:</strong> جایگزین مناسبی برای چک‌باکس‌ها هستند
+    و کاربر می‌تواند چند چیپس را انتخاب کند.
+  </li>
+</ul>
+
+<Divider dotted />
+
+<h3>
+  <span>چیپس حذف‌شونده (Removable Chip)</span>
+  <AnchorButton anchorId="چیپس حذف‌شونده (Removable Chip)" />
+</h3>
+
+<p>
+  این کامپوننت داده‌های ورودی کاربر را به شکل چیپسی نمایش می‌دهد که کاربر در
+  صورت تمایل می‌تواند آن را حذف کند.
+</p>
+
+<Divider dotted />
+
+<h3>
+  <span>چیپس‌های آیکون‌دار</span>
+  <AnchorButton anchorId="چیپس‌های آیکون‌دار" />
+</h3>
+
+<p>
+  آیکون‌ها در ابتدای چیپس‌ها قرار می‌گیرند. همهٔ چیپس‌ها می‌توانند آیکون داشته
+  باشند تا کنش مربوط به خودشان را واضح‌تر ابراز کنند. توصیه می‌کنیم در صورت
+  امکان از آیکون‌های SVG و یا از آیکون ‌فونت طراحی‌شده با قواعد سنّت استفاده
+  کنید.
+</p>
+
+<Divider dotted />
+
+<h3>
+  <span>اولویت‌های کاربرد</span>
+  <AnchorButton anchorId="اولویت‌های کاربرد" />
+</h3>
+
+<ul>
+  <li>
+    <strong>چیپس با درجهٔ اهمیت بالا (High Emphasis):</strong> برای تأکید و
+    نمایش اهمیت کنش اصلی، باید در چیدمان هر صفحهٔ رابط کاربر از مجموعه چیپس‌هایی
+    با درجهٔ اهمیت بالا استفاده شود.
+  </li>
+  <li>
+    <strong>
+      چیپس با درجهٔ اهمیت متوسط (Medium Emphasis) و درجهٔ اهمیت پایین (Low
+      Emphasis):
+    </strong>{" "}
+    در هر صفحهٔ رابط کاربر برای کنش‌هایی که نسبت به کنش اصلی اهمیت کمتری دارند،
+    با توجه به درجهٔ تأکید و اهمیت آن کنش، از این چیپس‌ها استفاده می‌شود.
+  </li>
+</ul>
+
+<div data-columnWrapper>
+  <Row>
+    <Column all="12" sm="6">
+      <div data-column>
+        <Image
+          caption="درجهٔ اهمیت چیپس در رابط کاربر، انتخاب نوع و شکل ظاهری آن را مشخص می کند."
+          imageProps={{
+            src: "/static/media/chip-emphasis-1.svg",
+            alt: "درجهٔ اهمیت چیپس در رابط کاربر، انتخاب نوع و شکل ظاهری آن را مشخص می کند.",
+            unoptimized: true,
+            width: 422,
+            height: 360
+          }}
+        />
+      </div>
+    </Column>
+    <Column all="12" sm="6">
+      <div data-column>
+        <Image
+          imageProps={{
+            src: "/static/media/chip-emphasis-2.svg",
+            alt: "درجهٔ اهمیت چیپس در رابط کاربر، انتخاب نوع و شکل ظاهری آن را مشخص می کند.",
+            unoptimized: true,
+            width: 422,
+            height: 360
+          }}
+        />
+      </div>
+    </Column>
+  </Row>
+</div>
+
+<div>
+  <p></p>
+  <Divider spaced />
+</div>
+
+<h2>
+  <span>انواع</span>
+  <AnchorButton anchorId="انواع" />
+</h2>
+
+<h3>
+  <span>چیپس توپر</span>
+  <AnchorButton anchorId="چیپس توپر" />
+</h3>
+
+<p>
+  چیپس‌های توپر با کادری که رنگ زمینه دارد مشخص و با داشتن رنگ اصلی برند در
+  زمینه، از سایر چیپس‌ها متمایز می‌شوند. این نوع چیپس‌ها برای محتوایی با درجهٔ
+  اهمیت بالا استفاده می‌شوند.
+</p>
+
+<Divider dotted />
+
+<h3>
+  <span>چیپس توخالی</span>
+  <AnchorButton anchorId="چیپس توخالی" />
+</h3>
+
+<p>
+  چیپس‌های توخالی رنگ زمینه ندارند، با دسنی نازک از محیط اطراف جدا می‌شوند و
+  شامل متنی ساده‌اند. این نوع چیپس‌ها برای محتوایی با درجهٔ اهمیت متوسط و پایین
+  مناسب‌اند. می‌توان با استفاده‌کردن یا نکردن رنگ برند در دسن و متن لیبل این
+  چیپس‌ها میان درجه اهمیت کنش‌های آن‌ها تمایز ایجاد کرد.
+</p>
+
+<Divider spaced />
+
+<h2>
+  <span>آناتومی</span>
+  <AnchorButton anchorId="آناتومی" />
+</h2>
+
+<p>
+  اینجا می‌توانید ابعاد چیپس‌ها، فاصله‌ها، حاشیه‌ها و اندازهٔ متن و آیکون را در
+  موقعیت‌های معمولی، آیکون‌دار و حذف‌شونده ببینید.
+</p>
+
+<div data-columnWrapper>
+  <Row>
+    <Column all="12" sm="6">
+      <div data-column>
+        <Anatomy
+          caption="چیپس"
+          imageProps={{
+            mainSrc: "/static/media/chip-anatomy-1.svg",
+            specSrc: "/static/media/chip-anatomy-1-spec.svg",
+            alt: "چیپس",
+            unoptimized: true,
+            width: 200,
+            height: 200
+          }}
+        />
+      </div>
+    </Column>
+    <Column all="12" sm="6">
+      <div data-column>
+        <Anatomy
+          caption="چیپس آیکون‌دار"
+          imageProps={{
+            mainSrc: "/static/media/chip-anatomy-2.svg",
+            specSrc: "/static/media/chip-anatomy-2-spec.svg",
+            alt: "چیپس آیکون‌دار",
+            unoptimized: true,
+            width: 200,
+            height: 200
+          }}
+        />
+      </div>
+    </Column>
+    <Column all="12" sm="6">
+      <div data-column>
+        <Anatomy
+          caption="چیپس حذف‌شونده"
+          imageProps={{
+            mainSrc: "/static/media/chip-anatomy-3.svg",
+            specSrc: "/static/media/chip-anatomy-3-spec.svg",
+            alt: "چیپس حذف‌شونده",
+            unoptimized: true,
+            width: 200,
+            height: 200
+          }}
+        />
+      </div>
+    </Column>
+    <Column all="12" sm="6">
+      <div data-column>
+        <Anatomy
+          caption="چیپس آیکون‌دار حذف‌شونده"
+          imageProps={{
+            mainSrc: "/static/media/chip-anatomy-4.svg",
+            specSrc: "/static/media/chip-anatomy-4-spec.svg",
+            alt: "چیپس آیکون‌دار حذف‌شونده",
+            unoptimized: true,
+            width: 200,
+            height: 200
+          }}
+        />
+      </div>
+    </Column>
+  </Row>
+</div>
+
+<div>
+  <p></p>
+  <Divider spaced />
+</div>
+
+<h2>
+  <span>رفتار</span>
+  <AnchorButton anchorId="رفتار" />
+</h2>
+
+<p>
+  در راهنمای زیر رفتار کامپوننت در کاربردهای مختلف دیزاین توضیح داده شده است.
+</p>
+
+<div data-columnWrapper>
+  <Row>
+    <Column all="12">
+      <div data-column>
+        <Behaviour
+          variant="do"
+          caption="چیپس کنش‌پذیر زیر محتوای اصلی قرار می‌گیرد و کنش‌های مربوط به آن را نمایش می‌دهد. همچنین شروع کنش در محتوای اصلی را برای کاربر فراهم می‌کند."
+          imageProps={{
+            src: "/static/media/chip-behaviour-1.svg",
+            alt: "چیپس کنش‌پذیر زیر محتوای اصلی قرار می‌گیرد و کنش‌های مربوط به آن را نمایش می‌دهد. همچنین شروع کنش در محتوای اصلی را برای کاربر فراهم می‌کند.",
+            unoptimized: true,
+            width: 860,
+            height: 454
+          }}
+        />
+      </div>
+    </Column>
+    <Column all="12">
+      <div data-column>
+        <Behaviour
+          variant="do"
+          caption="با انتخاب هر چیپس تک ‌انتخابی، بقیهٔ چیپس‌های آن گروه خود به خود از حالت انتخاب‌شده خارج می‌شوند و به وضعیت انتخاب‌نشده برمی‌گردند."
+          imageProps={{
+            src: "/static/media/chip-behaviour-2.svg",
+            alt: "با انتخاب هر چیپس تک ‌انتخابی، بقیهٔ چیپس‌های آن گروه خود به خود از حالت انتخاب‌شده خارج می‌شوند و به وضعیت انتخاب‌نشده برمی‌گردند.",
+            unoptimized: true,
+            width: 860,
+            height: 438
+          }}
+        />
+      </div>
+    </Column>
+    <Column all="12">
+      <div data-column>
+        <Behaviour
+          variant="do"
+          caption="هر چیپس حذف‌شونده نماینده‌ی شرطی است که روی محتوای اصلی تاثیر می‌گذارد. با انتخاب آیکون حذف آن، چیپس از وضعیت فعال خارج می‌شود و اثری که بر محتوا داشته نیز از بین می‌رود."
+          imageProps={{
+            src: "/static/media/chip-behaviour-3.svg",
+            alt: "هر چیپس حذف‌شونده نماینده‌ی شرطی است که روی محتوای اصلی تاثیر می‌گذارد. با انتخاب آیکون حذف آن، چیپس از وضعیت فعال خارج می‌شود و اثری که بر محتوا داشته نیز از بین می‌رود.",
+            unoptimized: true,
+            width: 860,
+            height: 438
+          }}
+        />
+      </div>
+    </Column>
+  </Row>
+</div>
+
+<div>
+  <p></p>
+  <Divider spaced />
+</div>
+
+<h2>
+  <span>نگارش</span>
+  <AnchorButton anchorId="نگارش" />
+</h2>
+
+<ul>
+  <li>
+    برای متن چیپس انتخابی و حذف‌شونده حداکثر ۳ کلمه و برای متن چیپس کنش‌پذیر
+    حداکثر ۴ کلمه بنویسید.
+  </li>
+  <li>از علائم نگارشی در متن چیپس‌ها استفاده نکنید.</li>
+</ul>

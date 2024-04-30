@@ -1,0 +1,281 @@
+import Divider from "@sonnat/ui/Divider";
+import Row from "@sonnat/ui/Row";
+import Column from "@sonnat/ui/Column";
+import AnchorButton from "components/AnchorButton";
+import WithTableOfContent from "components/layouts/WithTableOfContent";
+import Image from "components/Image";
+import Head from "next/head";
+import { defaultKeywordsMetaContent, siteFullAddress } from "sharedVars";
+import {
+  setCanonicalMeta,
+  setDescriptionMeta,
+  setKeywordsMeta,
+  setTitleMeta
+} from "utils";
+
+export const meta = {
+  title: "تایپوگرافی",
+  description:
+    "متن‌ها برای انتقال مفاهیم اصلی، کمک به کاربر برای تعامل با محصول و همچنین ایجاد تجربهٔ کاربرِ مناسب اهمیت ویژه‌ای دارند. تایپوگرافی با توجه‌ به جزئیاتی مانند اندازهٔ فونت‌ها، استایل و رنگ آن‌ها، باید محتوای متن‌ها را به‌راحت‌ترین و خواناترین شکل ممکن به کاربر انتقال دهد.",
+  getLayout: () => page =>
+    (
+      <WithTableOfContent
+        tableData={[
+          { id: "معرفی", label: "معرفی" },
+          { id: "مفاهیم", label: "مفاهیم" },
+          {
+            id: "کامپوننت‌ها و کاربردهای آن",
+            label: "کامپوننت‌ها و کاربردهای آن"
+          },
+          { id: "دسترس‌پذیری", label: "دسترس‌پذیری" }
+        ]}
+      >
+        {page}
+      </WithTableOfContent>
+    )
+};
+
+<Head>
+  {setTitleMeta(`${meta.title} | دیزاین سیستم سنّت`)}
+  {setDescriptionMeta(meta.description)}
+  {setCanonicalMeta(`${siteFullAddress}/foundation/typography`)}
+  {setKeywordsMeta([
+    ...defaultKeywordsMetaContent,
+    "typography",
+    "تایپوگرافی",
+    "text",
+    "متن"
+  ])}
+</Head>
+
+<h1>
+  <span>{meta.title}</span>
+  <AnchorButton anchorId="معرفی" />
+</h1>
+
+<p>{meta.description}</p>
+
+<h2>
+  <span>مفاهیم</span>
+  <AnchorButton anchorId="مفاهیم" />
+</h2>
+
+<h3>
+  <span>اندازه فونت (Font Size)</span>
+  <AnchorButton anchorId="اندازه فونت (Font Size)" />
+</h3>
+
+<p>
+  اندازهٔ کاراکترهای فونت را نشان می‌دهد و کوچکترین واحد اندازه‌گیری آن پوینت
+  (pt)، معادل ۱.۷۲ اینچ است. در تایپ دیجیتال حروف در فضایی فرضی به نام em square
+  قرار می‌گیرند که ابعاد آن را اندازهٔ فونت مشخص می‌کند. برای مثال حروف فونتی با
+  اندازهٔ ۱۰pt در فضایی با ابعاد ۱۰pt قرار می‌گیرند.
+</p>
+
+<Image
+  caption="اندازه فونت‌های استفاده شده در دیزاین سیستم سنّت"
+  imageProps={{
+    src: "/static/media/typography-font-size.svg",
+    alt: "اندازه فونت‌های استفاده شده در دیزاین سیستم سنّت",
+    unoptimized: true,
+    width: 860,
+    height: 228
+  }}
+/>
+
+<p>
+  انتخاب اندازهٔ فونت مناسب در خوانایی متن بسیار مهم است. به‌علاوه می‌توان با
+  استفاده از فونت‌هایی با اندازهٔ متفاوت و ایجاد تضاد، مفاهیم را سریع‌تر به
+  کاربر منتقل کرد. اندازهٔ فونت‌های استفاده‌شده و واحدهای آن‌ها در دیزاین سیستم
+  سنّت به شکل زیر است:
+</p>
+
+<table layout="fixed" cols={3} dataDir="ltr">
+  <caption>اندازه فونت‌های دیزاین سیستم سنّت</caption>
+  <thead>
+    <tr>
+      <th>Web</th>
+      <th>Android</th>
+      <th>iOS</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0.5rem</td>
+      <td>-</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>0.625rem</td>
+      <td>-</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>0.75rem</td>
+      <td>12pt</td>
+      <td>12sp</td>
+    </tr>
+    <tr>
+      <td>0.875rem</td>
+      <td>14pt</td>
+      <td>14sp</td>
+    </tr>
+    <tr>
+      <td>1rem</td>
+      <td>16pt</td>
+      <td>16sp</td>
+    </tr>
+    <tr>
+      <td>1.125rem</td>
+      <td>18pt</td>
+      <td>18sp</td>
+    </tr>
+    <tr>
+      <td>1.25rem</td>
+      <td>20pt</td>
+      <td>20sp</td>
+    </tr>
+    <tr>
+      <td>1.5rem</td>
+      <td>-</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>2rem</td>
+      <td>-</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>3rem</td>
+      <td>-</td>
+      <td>-</td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td colSpan="3">
+        واحد rem در مرورگرها براساس اندازهٔ فونت root element تعیین می‌شود که به
+        صورت پیش‌فرض 16px است.
+      </td>
+    </tr>
+  </tfoot>
+</table>
+
+<Divider dotted />
+
+<h3>
+  <span>وزن فونت (Font Weight)</span>
+  <AnchorButton anchorId="وزن فونت (Font Weight)" />
+</h3>
+
+<p>
+  نسبت ضخامت کاراکتر به ارتفاع آن، وزن فونت را تعیین می‌کند. وزن‌ها در مقیاس
+  عددی در بازه‌ای بین ۱۰۰ تا ۹۰۰ (۱۰۰، ۲۰۰، ۳۰۰، ... ، ۹۰۰) قرار می‌گیرند. برای
+  مثال مقدار فونت نرمال ۴۰۰ و مقدار فونت bold معادل ۷۰۰ است. برای اغلب فونت‌ها
+  همهٔ این ۹ حالت تعریف نشده است.
+  <br />
+  در دیزاین سیستم سنّت از وزن‌های Medium ،Regular ،Light و Bold خانوادهٔ فونت
+  IRANSans استفاده شده است. سلسله مراتب متن به‌وسیلهٔ تفاوت در وزن فونت متمایز
+  می شود.
+</p>
+
+<Image
+  caption="وزن‌های فونت استفاده شده در دیزاین سیستم سنّت"
+  imageProps={{
+    src: "/static/media/typography-font-weight.svg",
+    alt: "وزن‌های فونت استفاده شده در دیزاین سیستم سنّت",
+    unoptimized: true,
+    width: 860,
+    height: 314
+  }}
+/>
+
+<Divider dotted />
+
+<h3>
+  <span>ارتفاع خط (Line Height)</span>
+  <AnchorButton anchorId="ارتفاع خط (Line Height)" />
+</h3>
+
+<p>
+  به فاصلهٔ عمودی بین خطوط، ارتفاع خط گفته می‌شود. رایج‌ترین مقدار برای ارتفاع
+  خط ۱.۵em است. در دیزاین سیستم سنّت این مقدار بدون واحد (unitless) و با مقادیر
+  ۱.۵ در متن‌‌های عنوان و ۲ در متن‌های بدنه در نظر گرفته شده است.
+</p>
+
+<Image
+  caption="گوناگونی ارتفاع‌های خط در دیزاین سیستم سنّت"
+  imageProps={{
+    src: "/static/media/typography-line-height.svg",
+    alt: "گوناگونی ارتفاع‌های خط در دیزاین سیستم سنّت",
+    unoptimized: true,
+    width: 860,
+    height: 256
+  }}
+/>
+
+<Divider spaced />
+
+<h2>
+  <span>کامپوننت‌ها و کاربردهای آن</span>
+  <AnchorButton anchorId="کامپوننت‌ها و کاربردهای آن" />
+</h2>
+
+<h3>
+  <span>متن‌های عنوان اصلی (Headings)</span>
+  <AnchorButton anchorId="متن‌های عنوان اصلی (Headings)" />
+</h3>
+
+<p>
+  تایپوگرافی برای تگ‌های عنوان HTML اندازه و وزن فونت و ارتفاع خط را مشخص کرده
+  ‌است تا متن در حفظ خوانایی و سلسله مراتب موثر و قاعده‌مند عمل کند.
+</p>
+
+<h3>
+  <span>متن زیرعنوان (Subtitle Text)</span>
+  <AnchorButton anchorId="متن زیرعنوان (Subtitle Text)" />
+</h3>
+
+<p>
+  برای نمایش عنوان‌ها در بخش‌‌های مختلف رابط کاربر و همچنین عنوان‌های ساختار
+  کامپوننت‌ها، از متن عنوان استفاده می‌شود.
+</p>
+
+<h3>
+  <span>متن بدنه (Body Text)</span>
+  <AnchorButton anchorId="متن بدنه (Body Text)" />
+</h3>
+
+<p>
+  در کامپوننت متن بدنه از فونت‌های کوچکتری نسبت به متن عنوان استفاده می‌شود. این
+  کامپوننت برای متن‌های طولانی کاربرد دارد و در بدنهٔ اصلی و نیز بخش توضیحات در
+  ساختار کامپوننت‌ها استفاده می‌شود.
+</p>
+
+<h3>
+  <span>متن زیرنویس (Caption Text)</span>
+  <AnchorButton anchorId="متن زیرنویس (Caption Text)" />
+</h3>
+
+<p>
+  این کامپوننت برای نوشتن توضیح عکس‌ها، جدول‌ها و توضیحات داخل کامپوننت‌های کوچک
+  مانند ابزار راهنما کاربرد دارد و کوچکترین اندازهٔ فونت برای آن استفاده می‌شود.
+</p>
+
+<Divider dotted />
+
+<h2>
+  <span>دسترس‌پذیری</span>
+  <AnchorButton anchorId="دسترس‌پذیری" />
+</h2>
+
+<h3>
+  <span>رنگ‌های متن</span>
+  <AnchorButton anchorId="رنگ‌های متن" />
+</h3>
+
+<p>
+  رنگ‌های متن دیزاین سیستم سنّت براساس دستورالعمل‌های دسترس‌پذیری محتوای وب
+  (WCAG) تنظیم می‌شوند. با ایجاد کنتراست رنگ سطح AA (حداقل نسبت کنتراست ۴.۵:۱)
+  میان رنگ متن‌های اصلی و رنگ پس‌زمینه، خوانایی محتوای متنی صفحات تضمین می‌شود.
+</p>

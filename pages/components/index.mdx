@@ -1,0 +1,89 @@
+import Divar from "@sonnat/icons/Divar";
+import Divider from "@sonnat/ui/Divider";
+import AnchorButton from "components/AnchorButton";
+import ComponentsOfType from "components/ComponentsOfType";
+import WithTableOfContent from "components/layouts/WithTableOfContent";
+import Head from "next/head";
+import { defaultKeywordsMetaContent, siteFullAddress } from "sharedVars";
+import {
+  setCanonicalMeta,
+  setDescriptionMeta,
+  setKeywordsMeta,
+  setTitleMeta
+} from "utils";
+
+export const meta = {
+  title: "کامپوننت‌ها",
+  description:
+    "کامپوننت‌های سنّت بلوک‌هایی تعاملی برای ساخت رابط کاربری هستند. این کامپوننت‌ها برمبنای قواعد دیزاین سیستم دیزاین شده و مداوم و با ثبات توسعه داده می‌شوند.",
+  getLayout: () => page =>
+    (
+      <WithTableOfContent
+        tableData={[
+          { id: "معرفی", label: "معرفی" },
+          { id: "کنش‌گرها", label: "کنش‌گرها" },
+          { id: "کنترل‌کننده‌ها", label: "کنترل‌کننده‌ها" },
+          { id: "نمایش‌دهنده‌ها", label: "نمایش‌دهنده‌ها" },
+          { id: "راهبری", label: "راهبری" },
+          { id: "ردیف‌ها", label: "ردیف‌ها" }
+        ]}
+      >
+        {page}
+      </WithTableOfContent>
+    )
+};
+
+<Head>
+  {setTitleMeta(`${meta.title} | دیزاین سیستم سنّت`)}
+  {setDescriptionMeta(meta.description)}
+  {setCanonicalMeta(`${siteFullAddress}/components`)}
+  {setKeywordsMeta([
+    ...defaultKeywordsMetaContent,
+    "components",
+    "کامپوننت‌ها",
+    "کامپوننت"
+  ])}
+</Head>
+
+<h1>
+  <span>{meta.title}</span>
+  <AnchorButton anchorId="معرفی" />
+</h1>
+
+<p>{meta.description}</p>
+
+<h2>
+  <span>کنش‌گرها</span>
+  <AnchorButton anchorId="کنش‌گرها" />
+</h2>
+
+<ComponentsOfType type="Actions" />
+
+<h2>
+  <span>کنترل‌کننده‌ها</span>
+  <AnchorButton anchorId="کنترل‌کننده‌ها" />
+</h2>
+
+<ComponentsOfType type="Controlers" />
+
+<h2>
+  <span>نمایش‌دهنده‌ها</span>
+  <AnchorButton anchorId="نمایش‌دهنده‌ها" />
+</h2>
+
+<ComponentsOfType type="Display" />
+
+<h2>
+  <span>راهبری</span>
+  <AnchorButton anchorId="راهبری" />
+</h2>
+
+<ComponentsOfType type="Navigation" />
+
+<h2>
+  <span>ردیف‌ها</span>
+  <AnchorButton anchorId="ردیف‌ها" />
+  <Divar size={32} style={{ color: "#ea475b", marginRight: "auto" }} />
+</h2>
+
+<ComponentsOfType type="Rows" />

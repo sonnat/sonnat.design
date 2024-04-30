@@ -1,0 +1,485 @@
+import Divider from "@sonnat/ui/Divider";
+import Row from "@sonnat/ui/Row";
+import Column from "@sonnat/ui/Column";
+import Code from "@sonnat/ui/Code";
+import Image from "components/Image";
+import TabBarDemo from "components/demos/TabBarDemo";
+import Behaviour from "components/Behaviour";
+import Anatomy from "components/Anatomy";
+import AnchorButton from "components/AnchorButton";
+import WithTableOfContent from "components/layouts/WithTableOfContent";
+import Head from "next/head";
+import { defaultKeywordsMetaContent, siteFullAddress } from "sharedVars";
+import {
+  setCanonicalMeta,
+  setDescriptionMeta,
+  setKeywordsMeta,
+  setTitleMeta
+} from "utils";
+
+export const meta = {
+  title: "نوار تب",
+  description:
+    "نوار تب برای طبقه‌بندی و گروه‌بندی محتوا و دسته‌ای از اطلاعات مشابه در صفحه‌ها و نماهای مختلف استفاده می‌شود. نوار تب برای راهبری سریع کاربر بین محتوا شامل دو یا چند تب می‌شود، محتوای مربوط به هر تب را با انتخاب کردن آن تب می‌توان جداگانه دید.",
+  getLayout: () => page =>
+    (
+      <WithTableOfContent
+        tableData={[
+          { id: "معرفی", label: "معرفی" },
+          { id: "دموی تعاملی", label: "دموی تعاملی" },
+          { id: "کاربرد", label: "کاربرد" },
+          { id: "آناتومی", label: "آناتومی" },
+          { id: "رفتار", label: "رفتار" },
+          { id: "نگارش", label: "نگارش" }
+        ]}
+      >
+        {page}
+      </WithTableOfContent>
+    )
+};
+
+<Head>
+  {setTitleMeta(`${meta.title} | دیزاین سیستم سنّت`)}
+  {setDescriptionMeta(meta.description)}
+  {setCanonicalMeta(`${siteFullAddress}/components/TabBar`)}
+  {setKeywordsMeta([
+    ...defaultKeywordsMetaContent,
+    "tab bar",
+    "tabs",
+    "تب",
+    "نوار تب"
+  ])}
+</Head>
+
+<h1>
+  <span>{meta.title}</span>
+  <AnchorButton anchorId="معرفی" />
+</h1>
+
+<p>{meta.description}</p>
+
+<h2>
+  <span>دموی تعاملی</span>
+  <AnchorButton anchorId="دموی تعاملی" />
+</h2>
+
+<TabBarDemo />
+
+<h2>
+  <span>کاربرد</span>
+  <AnchorButton anchorId="کاربرد" />
+</h2>
+
+<p>
+  تب‌ها با طبقه‌بندی اطلاعات، کاربر را بین دسته‌هایی از محتواهای مرتبط و هم‌سطح
+  راهبری می‌کنند.
+</p>
+
+<h3>
+  <span>مجموعهٔ تب‌‌ها</span>
+  <AnchorButton anchorId="مجموعهٔ تب‌‌ها" />
+</h3>
+
+<p>
+  محتوای هر تب باید از بقیهٔ تب‌های مجموعه مجزا باشد و هر تب دسته‌ای از اطلاعات
+  مرتبط را معرفی کند. مثلاً برای نمایش دسته‌بندی‌های آگهی‌‌ مانند املاک، وسایل
+  نقلیه، لوازم الکترونیکی و ... می‌توان از نوار تب استفاده کرد.
+</p>
+
+<Divider dotted />
+
+<h3>
+  <span>نوار تب اسکرول‌شدنی</span>
+  <AnchorButton anchorId="نوار تب اسکرول‌شدنی" />
+</h3>
+
+<p>
+  افقی اسکرول می‌شود و عرض آن به نگه‌دارندهٔ والد (Parent Container) وابسته
+  (Relative) است. به همین دلیل رابط کاربر براساس نیازِ محصول می‌تواند تعداد
+  نامحدودی تب داشته باشد. اگر تب‌ها زیاد باشند یا عرض نگه‌دارنده کم باشد، بعضی
+  از تب‌ها در عرض نگه‌دارندهٔ والد جا نمی‌شوند. در این حالت عرض تب‌ها کم و فشرده
+  و یا بخشی از تب یا کل تب مخفی (Hide) می‌شود. محوکننده (Fader) مخفی‌شدنِ تب را
+  در نوار تب اسکرول‌شدنی میسر می‌کند تا کاربر از اسکرولی‌بودن نوار تب آگاه شود.
+  تب‌های نوار تب اسکرول‌شدنی می‌توانند لیبل‌های عریض‌تری داشته باشند که هیچ‌گاه
+  بریده یا خلاصه نمی‌شوند. استفادهٔ آن‌ها در دستگاه‌هایی با رابط لمسی یکی از
+  مفیدترین کاربردهای نوار تب اسکرول‌شدنی است.
+</p>
+
+<Image
+  imageProps={{
+    src: "/static/media/tabbar-scrollable.svg",
+    alt: "نوار تب اسکرول‌شدنی",
+    unoptimized: true,
+    width: 860,
+    height: 422
+  }}
+/>
+
+<Divider dotted />
+
+<h3>
+  <span>محوکننده با فلش</span>
+  <AnchorButton anchorId="محوکننده با فلش" />
+</h3>
+
+<p>
+  این محوکننده‌ها با گرادیان سفیدی که دو فلش در سمت چپ و راست نوار تب دارد،
+  کاربر را از اسکرولی‌بودن آن آگاه می‌کنند.
+</p>
+
+<Divider dotted />
+
+<h3>
+  <span>نوار تب با عرض کامل</span>
+  <AnchorButton anchorId="نوار تب با عرض کامل" />
+</h3>
+
+<p>
+  در نوار تب با عرض کامل همهٔ تب‌ها در یک نما نشان داده می‌شوند. عرض تب‌ها ثابت
+  است و هیچ تبی مخفی نمی‌شود. همچنین عرض نوار تب وابسته به نگه‌دارندهٔ والد است.
+  <br />
+  تب‌های این کامپوننت در حالت معمولی به وسط ‌چین و یا راست‌چین (در چیدمان زبان
+  فارسی) هم‌ترازند، و در حالت سیال (Fluid) در عرض نوار تب گسترده می‌شوند.
+</p>
+
+<Image
+  imageProps={{
+    src: "/static/media/tabbar-fluid.svg",
+    alt: "نوار تب با عرض کامل",
+    unoptimized: true,
+    width: 860,
+    height: 422
+  }}
+/>
+
+<Divider dotted />
+
+<h3>
+  <span>تب آیکون (تب بدون متن)</span>
+  <AnchorButton anchorId="تب آیکون (تب بدون متن)" />
+</h3>
+
+<p>برای استفاده از تب آیکون (تب بدون متن) در نوار تب این ۳ شرط لازم است:</p>
+
+<ul>
+  <li>فضای استفاده از تب محدود باشد.</li>
+  <li>دسترسی‌پذیری آیکون‌ها (pictogram) بررسی و تأیید شده باشد.</li>
+  <li>کاربر مفهوم آیکون را در محصول متوجه شود.</li>
+</ul>
+
+<Image
+  imageProps={{
+    src: "/static/media/tabbar-only-icon.svg",
+    alt: "تب آیکون (تب بدون متن)",
+    unoptimized: true,
+    width: 860,
+    height: 422
+  }}
+/>
+
+<Divider dotted />
+
+<h3>
+  <span>نشان‌گر (Indicator) تب فعال</span>
+  <AnchorButton anchorId="نشان‌گر (Indicator) تب فعال" />
+</h3>
+
+<p>
+  برای تمایز میان تب فعال و غیرفعال از نشانگر خطی با رنگ برند استفاده می‌کنیم که
+  زیر تب فعال قرار می‌گیرد. همچنین لیبل متنی و آیکون تب فعال نیز با رنگ برند از
+  تب‌های غیرفعال متمایز می‌شوند.
+</p>
+
+<Divider dotted />
+
+<h3>
+  <span>لیبل متنی</span>
+  <AnchorButton anchorId="لیبل متنی" />
+</h3>
+
+<p>
+  لیبل متنی باید خلاصه و واضح محتوایی را که نشان می‌دهد، توصیف کند. محتوای تب‌
+  باید مجموعه‌ای منسجم از داده‌هایی با ویژگی‌های مشترک باشد.
+  <br />
+  متن لیبل‌ تب نباید هیچگاه ۲ خط ‌شود. پیشنهاد می‌کنیم برای لیبل‌هایی با متن
+  طولانی، از نوار تب با اسکرول افقی استفاده کنید تا متن لیبل به‌راحتی خوانده
+  شود.
+</p>
+
+<Divider dotted />
+
+<h3>
+  <span>تب آیکون‌دار</span>
+  <AnchorButton anchorId="تب آیکون‌دار" />
+</h3>
+
+<p>
+  تب‌ها برای ایجاد ارتباط بهتر با محتوا می‌توانند آیکون داشته باشند. آیکون‌ها
+  نوع محتوای تب را ساده و مشخص به کاربر منتقل می‌کنند، اگرچه به اندازهٔ لیبل‌های
+  متنی در انتقال محتواهای پیچیده موثر نیستند.
+  <br />
+  تب‌ها می‌توانند ترکیبی از آیکون و متن (تب آیکون‌دار) باشند.
+</p>
+
+<Divider spaced />
+
+<h2>
+  <span>آناتومی</span>
+  <AnchorButton anchorId="آناتومی" />
+</h2>
+
+<p>
+  اینجا می‌توانید ابعاد تب‌های درون نوار تب، فاصله‌ها، حاشیه‌ها و اندازهٔ متن و
+  آیکون آن‌ها را در حالت‌های مختلف ببینید.
+</p>
+
+<div data-columnWrapper>
+  <Row>
+    <Column all="12" sm="6">
+      <div data-column>
+        <Anatomy
+          caption="تب"
+          imageProps={{
+            mainSrc: "/static/media/tabbar-anatomy-1.svg",
+            specSrc: "/static/media/tabbar-anatomy-1-spec.svg",
+            alt: "تب",
+            unoptimized: true,
+            width: 200,
+            height: 200
+          }}
+        />
+      </div>
+    </Column>
+    <Column all="12" sm="6">
+      <div data-column>
+        <Anatomy
+          caption="تب آیکون‌دار"
+          imageProps={{
+            mainSrc: "/static/media/tabbar-anatomy-2.svg",
+            specSrc: "/static/media/tabbar-anatomy-2-spec.svg",
+            alt: "تب آیکون‌دار",
+            unoptimized: true,
+            width: 200,
+            height: 200
+          }}
+        />
+      </div>
+    </Column>
+    <Column all="12" sm="6">
+      <div data-column>
+        <Anatomy
+          caption="تب آیکون (تب بدون متن)"
+          imageProps={{
+            mainSrc: "/static/media/tabbar-anatomy-3.svg",
+            specSrc: "/static/media/tabbar-anatomy-3-spec.svg",
+            alt: "تب آیکون (تب بدون متن)",
+            unoptimized: true,
+            width: 200,
+            height: 200
+          }}
+        />
+      </div>
+    </Column>
+  </Row>
+</div>
+
+<div>
+  <p></p>
+  <Divider spaced />
+</div>
+
+<h2>
+  <span>رفتار</span>
+  <AnchorButton anchorId="رفتار" />
+</h2>
+
+<p>
+  در راهنمای زیر رفتار کامپوننت در کاربردهای مختلف دیزاین توضیح داده شده است.
+</p>
+
+<div data-columnWrapper>
+  <Row>
+    <Column all="12" sm="6">
+      <div data-column>
+        <Behaviour
+          variant="do"
+          caption="لیبل‌ هر تب می‌تواند متن و آیکون داشته باشد. برای لیبل‌‌های متنی باید از عبارات کوتاه استفاده شود."
+          imageProps={{
+            src: "/static/media/tabbar-behaviour-1.svg",
+            alt: "لیبل‌ هر تب می‌تواند متن و آیکون داشته باشد. برای لیبل‌‌های متنی باید از عبارات کوتاه استفاده شود.",
+            unoptimized: true,
+            width: 422,
+            height: 344
+          }}
+        />
+      </div>
+    </Column>
+    <Column all="12" sm="6">
+      <div data-column>
+        <Behaviour
+          variant="do"
+          caption="در صفحه‌نمایش موبایل و دسکتاپ تب اول را با کمی فاصله (حاشیه) از سمت راست قراردهید تا کاربر از اسکرولی‌بودن نوار تب آگاه شود."
+          imageProps={{
+            src: "/static/media/tabbar-behaviour-2.svg",
+            alt: "در صفحه‌نمایش موبایل و دسکتاپ تب اول را با کمی فاصله (حاشیه) از سمت راست قراردهید تا کاربر از اسکرولی‌بودن نوار تب آگاه شود.",
+            unoptimized: true,
+            width: 422,
+            height: 344
+          }}
+        />
+      </div>
+    </Column>
+    <Column all="12" sm="6">
+      <div data-column>
+        <Behaviour
+          variant="do"
+          caption="کاربران با ضربه‌زدن یا کلیک‌کردن روی یک تب، بین تب‌های مختلف جابه‌جا می‌شوند."
+          imageProps={{
+            src: "/static/media/tabbar-behaviour-3.svg",
+            alt: "کاربران با ضربه‌زدن یا کلیک‌کردن روی یک تب، بین تب‌های مختلف جابه‌جا می‌شوند.",
+            unoptimized: true,
+            width: 422,
+            height: 344
+          }}
+        />
+      </div>
+    </Column>
+    <Column all="12" sm="6">
+      <div data-column>
+        <Behaviour
+          variant="dont"
+          caption="از تب برای مقایسهٔ ویژگی‌های محتوا استفاده نکنید."
+          imageProps={{
+            src: "/static/media/tabbar-behaviour-4.svg",
+            alt: "از تب برای مقایسهٔ ویژگی‌های محتوا استفاده نکنید.",
+            unoptimized: true,
+            width: 422,
+            height: 344
+          }}
+        />
+      </div>
+    </Column>
+    <Column all="12" sm="6">
+      <div data-column>
+        <Behaviour
+          variant="dont"
+          caption="تب‌های نوار تب به سه شکل «متنی (بدون آیکون)»، «آیکون‌دار» و «تب ‌آیکون (بدون متن)» استفاده می‌شوند. همهٔ تب‌های نوار تب باید از یک نوع باشند."
+          imageProps={{
+            src: "/static/media/tabbar-behaviour-5.svg",
+            alt: "تب‌های نوار تب به سه شکل «متنی (بدون آیکون)»، «آیکون‌دار» و «تب ‌آیکون (بدون متن)» استفاده می‌شوند. همهٔ تب‌های نوار تب باید از یک نوع باشند.",
+            unoptimized: true,
+            width: 422,
+            height: 344
+          }}
+        />
+      </div>
+    </Column>
+    <Column all="12" sm="6">
+      <div data-column>
+        <Behaviour
+          variant="dont"
+          caption="از فاصله‌های (padding) نابرابر بین تب‌ها استفاده نکنید."
+          imageProps={{
+            src: "/static/media/tabbar-behaviour-6.svg",
+            alt: "از فاصله‌های (padding) نابرابر بین تب‌ها استفاده نکنید.",
+            unoptimized: true,
+            width: 422,
+            height: 344
+          }}
+        />
+      </div>
+    </Column>
+    <Column all="12" sm="6">
+      <div data-column>
+        <Behaviour
+          variant="dont"
+          caption="برای بیشتر از ۴ تب از نوار تب با عرض کامل استفاده نکنید."
+          imageProps={{
+            src: "/static/media/tabbar-behaviour-7.svg",
+            alt: "برای بیشتر از ۴ تب از نوار تب با عرض کامل استفاده نکنید.",
+            unoptimized: true,
+            width: 422,
+            height: 344
+          }}
+        />
+      </div>
+    </Column>
+    <Column all="12" sm="6">
+      <div data-column>
+        <Behaviour
+          variant="dont"
+          caption="در صفحاتی که از نوار تب استفاده کرده‌اید، پایین آن از چیدمان و ظاهر مشابه با این کامپوننت استفاده نکنید تا کاربر تب را جزئی از محتوا تشخیص ندهد."
+          imageProps={{
+            src: "/static/media/tabbar-behaviour-8.svg",
+            alt: "در صفحاتی که از نوار تب استفاده کرده‌اید، پایین آن از چیدمان و ظاهر مشابه با این کامپوننت استفاده نکنید تا کاربر تب را جزئی از محتوا تشخیص ندهد.",
+            unoptimized: true,
+            width: 422,
+            height: 344
+          }}
+        />
+      </div>
+    </Column>
+    <Column all="12" sm="6">
+      <div data-column>
+        <Behaviour
+          variant="dont"
+          caption="اگر متن لیبل طولانی شد، سایز آن را کوچک‌تر نکنید و به جای آن از نوار تب اسکرول‌شدنی و یا تب‌های متراکم استفاده کنید تا متن لیبل درست نمایش داده شود."
+          imageProps={{
+            src: "/static/media/tabbar-behaviour-9.svg",
+            alt: "اگر متن لیبل طولانی شد، سایز آن را کوچک‌تر نکنید و به جای آن از نوار تب اسکرول‌شدنی و یا تب‌های متراکم استفاده کنید تا متن لیبل درست نمایش داده شود.",
+            unoptimized: true,
+            width: 422,
+            height: 344
+          }}
+        />
+      </div>
+    </Column>
+    <Column all="12" sm="6">
+      <div data-column>
+        <Behaviour
+          variant="dont"
+          caption="تب‌های نوار تب فقط در یک ردیف کنار هم چیده می‌شوند و به ردیف‌های بیشتر شکسته نمی‌شوند."
+          imageProps={{
+            src: "/static/media/tabbar-behaviour-10.svg",
+            alt: "تب‌های نوار تب فقط در یک ردیف کنار هم چیده می‌شوند و به ردیف‌های بیشتر شکسته نمی‌شوند.",
+            unoptimized: true,
+            width: 422,
+            height: 344
+          }}
+        />
+      </div>
+    </Column>
+    <Column all="12" sm="6">
+      <div data-column>
+        <Behaviour
+          variant="dont"
+          caption="تا حد امکان از بریده‌شدن متن لیبل جلوگیری کنید. زیرا متن بریده‌شده درک کاربر از مفهوم لیبل را مخدوش می‌کند."
+          imageProps={{
+            src: "/static/media/tabbar-behaviour-11.svg",
+            alt: "تا حد امکان از بریده‌شدن متن لیبل جلوگیری کنید. زیرا متن بریده‌شده درک کاربر از مفهوم لیبل را مخدوش می‌کند.",
+            unoptimized: true,
+            width: 422,
+            height: 344
+          }}
+        />
+      </div>
+    </Column>
+  </Row>
+</div>
+
+<div>
+  <p></p>
+  <Divider spaced />
+</div>
+
+<h2>
+  <span>نگارش</span>
+  <AnchorButton anchorId="نگارش" />
+</h2>
+
+<ul>
+  <li>
+    وقتی از نوار تب با عرض کامل استفاده می‌کنید از نمایش درست محتوای تب‌ها در
+    سایز موبایل مطمئن شوید.
+  </li>
+</ul>

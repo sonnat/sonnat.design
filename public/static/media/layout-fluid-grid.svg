@@ -1,0 +1,180 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="860" height="428" viewBox="0 0 860 428">
+  <defs>
+    <rect id="fluid_grid-a" width="860" height="428" x="0" y="0" rx="4"/>
+    <rect id="fluid_grid-d" width="520" height="300" x="0" y="0" rx="4"/>
+    <filter id="fluid_grid-c" width="110%" height="117.3%" x="-5%" y="-7.3%" filterUnits="objectBoundingBox">
+      <feOffset dy="4" in="SourceAlpha" result="shadowOffsetOuter1"/>
+      <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="8"/>
+      <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.12 0"/>
+    </filter>
+  </defs>
+
+
+    <style>
+  @keyframes screen {
+0%{
+transform:translate(170px, 64px) scale(1, 1);
+transform-origin:260px 0px;
+}
+20%{
+transform:translate(170px, 64px) scale(1, 1);
+transform-origin:260px 0px;
+}
+30%{
+transform:translate(170px, 64px) scale(1, 1);
+transform-origin:260px 0px;
+}
+40%{
+transform:translate(170px, 64px) scale(.7, 1);
+transform-origin:260px 0px;
+}
+70%{
+transform:translate(170px, 64px) scale(.7, 1);
+transform-origin:260px 0px;
+}
+85%{
+transform:translate(170px, 64px) scale(1, 1);
+transform-origin:260px 0px;
+}
+100%{
+transform:translate(170px, 64px) scale(1, 1);
+transform-origin:260px 0px;
+}
+}
+
+
+  @keyframes columns {
+0%{
+transform:translate(182px, 64px) scale(1, 1);
+transform-origin:248px 0px;
+}
+20%{
+transform:translate(182px, 64px) scale(1, 1);
+transform-origin:248px 0px;
+}
+30%{
+transform:translate(182px, 64px) scale(1, 1);
+transform-origin:248px 0px;
+}
+40%{
+transform:translate(182px, 64px) scale(.7, 1);
+transform-origin:248px 0px;
+}
+70%{
+transform:translate(182px, 64px) scale(.7, 1);
+transform-origin:248px 0px;
+}
+85%{
+transform:translate(182px, 64px) scale(1, 1);
+transform-origin:248px 0px;
+}
+100%{
+transform:translate(182px, 64px) scale(1, 1);
+transform-origin:248px 0px;
+}
+}
+
+
+  @keyframes gutters {
+0%{
+transform:translate(216px, 64px) scale(1, 1);
+transform-origin:214px 0px;
+}
+20%{
+transform:translate(216px, 64px) scale(1, 1);
+transform-origin:214px 0px;
+}
+30%{
+transform:translate(216px, 64px) scale(1, 1);
+transform-origin:214px 0px;
+}
+40%{
+transform:translate(216px, 64px) scale(.7, 1);
+transform-origin:214px 0px;
+}
+70%{
+transform:translate(216px, 64px) scale(.7, 1);
+transform-origin:214px 0px;
+}
+85%{
+transform:translate(216px, 64px) scale(1, 1);
+transform-origin:214px 0px;
+}
+100%{
+transform:translate(216px, 64px) scale(1, 1);
+transform-origin:214px 0px;
+}
+}
+
+
+  @keyframes gutter {
+0%{
+transform: scale(1, 1);
+
+}
+20%{
+transform: scale(1, 1);
+}
+30%{
+transform: scale(1, 1);
+}
+40%{
+transform: scale(1.45, 1);
+}
+70%{
+transform: scale(1.45, 1);
+}
+85%{
+transform: scale(1, 1);
+}
+100%{
+transform: scale(1, 1);
+}
+}
+  </style>
+
+
+  <g fill="none" fill-rule="evenodd">
+    <mask id="fluid_grid-b" fill="#fff">
+      <use xlink:href="#fluid_grid-a"/>
+    </mask>
+    <use fill="#000000" fill-opacity="0" xlink:href="#fluid_grid-a"/>
+    <g mask="url(#fluid_grid-b)">
+      <g transform="translate(170 64)" style="animation:screen 5000ms cubic-bezier(0.83, 0, 0.17, 1) infinite">
+        <use fill="#000" filter="url(#fluid_grid-c)" xlink:href="#fluid_grid-d"/>
+        <rect width="520" height="300" fill="#FFF" rx="4"/>
+      </g>
+    </g>
+    <g fill="#EA475B" fill-opacity=".08" mask="url(#fluid_grid-b)">
+      <g transform="translate(182 64)" style="animation:columns 5000ms cubic-bezier(0.83, 0, 0.17, 1) infinite">
+        <rect width="34" height="300"/>
+        <rect width="34" height="300" x="42"/>
+        <rect width="34" height="300" x="84"/>
+        <rect width="34" height="300" x="126"/>
+        <rect width="34" height="300" x="168"/>
+        <rect width="34" height="300" x="210"/>
+        <rect width="34" height="300" x="252"/>
+        <rect width="34" height="300" x="294"/>
+        <rect width="34" height="300" x="336"/>
+        <rect width="34" height="300" x="378"/>
+        <rect width="34" height="300" x="420"/>
+        <rect width="34" height="300" x="462"/>
+      </g>
+    </g>
+    <g fill="#fff" mask="url(#fluid_grid-b)">
+      <g transform="translate(216 64)" style="animation:gutters 5000ms cubic-bezier(0.83, 0, 0.17, 1) infinite">
+        <rect width="8" height="300" style="animation:gutter 5000ms cubic-bezier(0.83, 0, 0.17, 1) infinite;transform-origin:4px 0px;"/>
+        <rect width="8" height="300" x="42" style="animation:gutter 5000ms cubic-bezier(0.83, 0, 0.17, 1) infinite;transform-origin:42px 0px;" />
+        <rect width="8" height="300" x="84" style="animation:gutter 5000ms cubic-bezier(0.83, 0, 0.17, 1) infinite;transform-origin:84px 0px;"/>
+        <rect width="8" height="300" x="126" style="animation:gutter 5000ms cubic-bezier(0.83, 0, 0.17, 1) infinite;transform-origin:126px 0px;"/>
+        <rect width="8" height="300" x="168" style="animation:gutter 5000ms cubic-bezier(0.83, 0, 0.17, 1) infinite;transform-origin:168px 0px;"/>
+        <rect width="8" height="300" x="210" style="animation:gutter 5000ms cubic-bezier(0.83, 0, 0.17, 1) infinite;transform-origin:210px 0px;"/>
+        <rect width="8" height="300" x="252" style="animation:gutter 5000ms cubic-bezier(0.83, 0, 0.17, 1) infinite;transform-origin:252px 0px;"/>
+        <rect width="8" height="300" x="294" style="animation:gutter 5000ms cubic-bezier(0.83, 0, 0.17, 1) infinite;transform-origin:294px 0px;"/>
+        <rect width="8" height="300" x="336" style="animation:gutter 5000ms cubic-bezier(0.83, 0, 0.17, 1) infinite;transform-origin:336px 0px;"/>
+        <rect width="8" height="300" x="378" style="animation:gutter 5000ms cubic-bezier(0.83, 0, 0.17, 1) infinite;transform-origin:378px 0px;"/>
+        <rect width="8" height="300" x="420" style="animation:gutter 5000ms cubic-bezier(0.83, 0, 0.17, 1) infinite;transform-origin:420px 0px;"/>
+      </g>
+    </g>
+  </g>
+</svg>

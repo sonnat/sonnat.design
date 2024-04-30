@@ -1,0 +1,165 @@
+import Divider from "@sonnat/ui/Divider";
+import Row from "@sonnat/ui/Row";
+import Column from "@sonnat/ui/Column";
+import Code from "@sonnat/ui/Code";
+import Image from "components/Image";
+import Behaviour from "components/Behaviour";
+import Anatomy from "components/Anatomy";
+import AnchorButton from "components/AnchorButton";
+import WithTableOfContent from "components/layouts/WithTableOfContent";
+import Head from "next/head";
+import { defaultKeywordsMetaContent, siteFullAddress } from "sharedVars";
+import {
+  setCanonicalMeta,
+  setDescriptionMeta,
+  setKeywordsMeta,
+  setTitleMeta
+} from "utils";
+
+export const meta = {
+  title: "ردیف داده",
+  description:
+    "برای نمایش داده‌های گسترهٔ وسیعی از کالاها، محصولات و سرویس‌ها از ردیف داده استفاده می‌شود.",
+  getLayout: () => page =>
+    (
+      <WithTableOfContent
+        tableData={[
+          { id: "معرفی", label: "معرفی" },
+          { id: "کاربرد", label: "کاربرد" },
+          { id: "انواع", label: "انواع" }
+        ]}
+      >
+        {page}
+      </WithTableOfContent>
+    )
+};
+
+<Head>
+  {setTitleMeta(`${meta.title} | دیزاین سیستم سنّت`)}
+  {setDescriptionMeta(meta.description)}
+  {setCanonicalMeta(`${siteFullAddress}/components/divar/InfoRow`)}
+  {setKeywordsMeta([...defaultKeywordsMetaContent, "info row"])}
+</Head>
+
+<h1>
+  <span>{meta.title}</span>
+  <AnchorButton anchorId="معرفی" />
+</h1>
+
+<p data-subtitle>
+  ردیف‌ دادهٔ تک‌خطی (Unexpandable)، بسط‌پذیر (Expandable) و گروهی (Group)
+</p>
+
+<p>{meta.description}</p>
+
+<h2>
+  <span>کاربرد</span>
+  <AnchorButton anchorId="کاربرد" />
+</h2>
+
+<p>
+  در ردیف داده با نمایش متنی ویژگی‌های محصول یا سرویس در دو بخش مجزای عنوان و
+  مقدار توضیح داده می‌شود.
+</p>
+
+<h3>
+  <span>عنوان</span>
+  <AnchorButton anchorId="عنوان" />
+</h3>
+
+<p>عنوان، موضوع ردیف داده را مشخص می‌کند.</p>
+
+<Divider dotted />
+
+<h3>
+  <span>مقدار</span>
+  <AnchorButton anchorId="مقدار" />
+</h3>
+
+<p>
+  مقدار، عنوان را در چند کلمه یا چند جمله توضیح می‌دهد.
+  <br />
+  در ردیف‌های دادهٔ تک‌خطی و گروهی، مقدار در ۱ تا ۳ کلمه عنوان را توضیح می‌دهد.
+  در ردیف‌های دادهٔ بسط‌پذیر، مقدار می‌تواند بیشتر از چند کلمه باشد و در چند
+  جمله عنوان را توضیح دهد.
+  <br />
+  درجهٔ اهمیت مقدار همیشه از عنوان بالاتر است.
+</p>
+
+<Divider spaced />
+
+<h2>
+  <span>انواع</span>
+  <AnchorButton anchorId="انواع" />
+</h2>
+
+<h3>
+  <span>ردیف دادهٔ تک‌خطی</span>
+  <AnchorButton anchorId="ردیف دادهٔ تک‌خطی" />
+</h3>
+
+<p>
+  مقدار ردیف‌های دادهٔ تک‌خطی می‌تواند متن یا لینک باشد. در حالت دوم، متن آن
+  باید با رنگ برند نمایش داده شود و فقط محدودهٔ لینک مقدار تعاملی است. در
+  ردیف‌های داده درجهٔ اهمیت مقدار بیشتر از عنوان است. در نتیجه مقدار، وزن بصری
+  بیشتری نسبت به عنوان دارد.
+</p>
+
+<Image
+  caption="ردیف دادهٔ تک‌خطی"
+  imageProps={{
+    src: "/static/media/info-row-1.svg",
+    alt: "ردیف دادهٔ تک‌خطی",
+    unoptimized: true,
+    width: 860,
+    height: 224
+  }}
+/>
+
+<Divider dotted />
+
+<h3>
+  <span>ردیف دادهٔ بسط‌پذیر</span>
+  <AnchorButton anchorId="ردیف دادهٔ بسط‌پذیر" />
+</h3>
+
+<p>
+  از این نوع ردیف داده زمانی استفاده می‌شود که مقدار بیشتر از ۳ کلمه باشد. در
+  این صورت به جای مقدار از عبارتی مانند «نمایش» استفاده می‌شود و کنار آن فلشی رو
+  به پایین قرار می‌گیرد. در این حالت با کلیک‌کردن روی ردیف داده، کامپوننت باز
+  می‌شود و مقدار زیر عنوان نمایش داده می‌شود.
+</p>
+
+<Image
+  caption="ردیف دادهٔ بسط‌پذیر"
+  imageProps={{
+    src: "/static/media/info-row-2.svg",
+    alt: "ردیف دادهٔ بسط‌پذیر",
+    unoptimized: true,
+    width: 860,
+    height: 232
+  }}
+/>
+
+<Divider dotted />
+
+<h3>
+  <span>ردیف دادهٔ گروهی</span>
+  <AnchorButton anchorId="ردیف دادهٔ گروهی" />
+</h3>
+
+<p>
+  در ردیف‌های دادهٔ گروهی عنوان و مقدار زیر هم قرار می‌گیرند. این کامپوننت حداقل
+  ۲ و حداکثر ۳ ویژگی را نمایش می‌دهد. این ویژگی‌ها وسط‌چین می‌شوند.
+</p>
+
+<Image
+  caption="ردیف دادهٔ گروهی"
+  imageProps={{
+    src: "/static/media/info-row-3.svg",
+    alt: "ردیف دادهٔ گروهی",
+    unoptimized: true,
+    width: 860,
+    height: 342
+  }}
+/>

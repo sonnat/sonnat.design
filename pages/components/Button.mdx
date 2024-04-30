@@ -1,0 +1,465 @@
+import Divider from "@sonnat/ui/Divider";
+import Row from "@sonnat/ui/Row";
+import Column from "@sonnat/ui/Column";
+import Code from "@sonnat/ui/Code";
+import Image from "components/Image";
+import ButtonDemo from "components/demos/ButtonDemo";
+import Behaviour from "components/Behaviour";
+import Anatomy from "components/Anatomy";
+import AnchorButton from "components/AnchorButton";
+import WithTableOfContent from "components/layouts/WithTableOfContent";
+import Head from "next/head";
+import { defaultKeywordsMetaContent, siteFullAddress } from "sharedVars";
+import {
+  setCanonicalMeta,
+  setDescriptionMeta,
+  setKeywordsMeta,
+  setTitleMeta
+} from "utils";
+
+export const meta = {
+  title: "دکمه",
+  description:
+    "یکی از مهم‌ترین کامپوننت‌های تعاملی دکمه‌ها هستند که کاربران برای کُنش انجام‌دادن از آن استفاده می‌کنند. دکمه‌ها میان کاربر، سیستم و مسیر پیشِ ‌روی کاربران واسطه‌اند. واکنش دکمه‌ها در فشرده‌شدن باید واضح و دقیق احساس شود و به‌راحتی با یک لمس یا کلیک عمل کنند. نتیجهٔ عمل دکمه‌ها باید به‌سرعت دیده شود.",
+  getLayout: () => page =>
+    (
+      <WithTableOfContent
+        tableData={[
+          { id: "معرفی", label: "معرفی" },
+          { id: "دموی تعاملی", label: "دموی تعاملی" },
+          { id: "کاربرد", label: "کاربرد" },
+          { id: "انواع", label: "انواع" },
+          { id: "آناتومی", label: "آناتومی" },
+          { id: "رفتار", label: "رفتار" },
+          { id: "نگارش", label: "نگارش" }
+        ]}
+      >
+        {page}
+      </WithTableOfContent>
+    )
+};
+
+<Head>
+  {setTitleMeta(`${meta.title} | دیزاین سیستم سنّت`)}
+  {setDescriptionMeta(meta.description)}
+  {setCanonicalMeta(`${siteFullAddress}/components/Button`)}
+  {setKeywordsMeta([...defaultKeywordsMetaContent, "button", "دکمه"])}
+</Head>
+
+<h1>
+  <span>{meta.title}</span>
+  <AnchorButton anchorId="معرفی" />
+</h1>
+
+<p data-subtitle>دکمه‌ توپُر (Filled)، توخالی (Outlined)، متنی (Inlined)</p>
+
+<p>{meta.description}</p>
+
+<h2>
+  <span>دموی تعاملی</span>
+  <AnchorButton anchorId="دموی تعاملی" />
+</h2>
+
+<ButtonDemo />
+
+<h2>
+  <span>کاربرد</span>
+  <AnchorButton anchorId="کاربرد" />
+</h2>
+
+<p>
+  دکمه‌ها باید در جایی قرار بگیرند که کاربر به‌راحتی آن‌ها را پیدا کند یا جایی
+  باشند که کاربر انتظار دارد آنجا دکمه ببیند. دکمه‌ها می‌توانند در این‌ مکان‌ها
+  باشند:
+</p>
+
+<ul>
+  <li>انتهای فرم‌ها</li>
+  <li>دیالوگ‌های مُدال</li>
+  <li>دیالوگ‌ها</li>
+  <li>منوهای کناری و راهبری</li>
+  <li>نوار ابزارها</li>
+</ul>
+
+<p>
+  تمام کنش‌ها و حالت‌های مختلف دکمه مثل هاور، فوکوس و غیرفعال باید مشخص باشند،
+  دکمه‌ها باید میان عناصر دیگر به‌راحتی تشخیص داده شوند و اگر کاربر نتواند آن‌ها
+  را پیدا کند، متوجه وجود آن‌ها نخواهد شد. ازین بابت ویژگی‌های بصری خود دکمه
+  اهمیت بسیار دارند، فضای سفید اطراف دکمه می‌تواند در راحت یا دشوار پیدا کردن
+  دکمه تاثیر بگذارد.
+</p>
+
+<h3>
+  <span>اولویت‌های کاربرد</span>
+  <AnchorButton anchorId="اولویت‌های کاربرد" />
+</h3>
+
+<ul>
+  <li>
+    <strong>دکمهٔ با درجهٔ اهمیت بالا (High-emphasis):</strong> برای تأکید و
+    نمایش اهمیت کنش اصلی، باید در چیدمان هر صفحهٔ رابط کاربر از دکمه‌ای با درجهٔ
+    اهمیت بالا استفاده شود. این دکمه یکتا است و در صورت همراهی با دکمه‌هایی با
+    درجهٔ اهمیت متوسط یا پایین، باید متمایز و برجسته باشد.
+  </li>
+  <li>
+    <strong>
+      دکمه‌های با درجهٔ اهمیت متوسط (Medium-emphasis) و درجهٔ اهمیت پایین
+      (Low-emphasis):
+    </strong>{" "}
+    در هر صفحهٔ رابط کاربر برای کنش‌هایی که نسبت به کنش اصلی اهمیت کمتری دارند،
+    با توجه به درجهٔ تأکید و اهمیت آن کنش، ازین دکمه‌ها استفاده می‌شود. دکمهٔ با
+    درجهٔ اهمیت پایین یا متوسط باید علاوه بر متمایز‌ بودن از دکمهٔ با درجهٔ
+    اهمیت بالا، اولویت سایر کنش‌های صفحه را نیز مشخص کند. مهم است زمانی که
+    دکمه‌هایی با درجهٔ اهمیت متفاوت کنار هم قرار می‌گیرند، هیچ‌کدام با وضعیت
+    غیرفعال دکمهٔ مجاورش اشتباه گرفته نشود.
+  </li>
+</ul>
+
+<div data-columnWrapper>
+  <Row>
+    <Column all="12" sm="6">
+      <div data-column>
+        <Image
+          caption="درجهٔ اهمیت دکمه در رابط کاربر، انتخاب نوع و شکل ظاهری آن را مشخص می‌کند."
+          imageProps={{
+            src: "/static/media/button-emphasis-1.svg",
+            alt: "درجهٔ اهمیت دکمه در رابط کاربر، انتخاب نوع و شکل ظاهری آن را مشخص می‌کند.",
+            unoptimized: true,
+            width: 422,
+            height: 360
+          }}
+        />
+      </div>
+    </Column>
+    <Column all="12" sm="6">
+      <div data-column>
+        <Image
+          imageProps={{
+            src: "/static/media/button-emphasis-2.svg",
+            alt: "درجهٔ اهمیت دکمه در رابط کاربر، انتخاب نوع و شکل ظاهری آن را مشخص می‌کند.",
+            unoptimized: true,
+            width: 422,
+            height: 360
+          }}
+        />
+      </div>
+    </Column>
+  </Row>
+</div>
+
+<h3>
+  <span>دکمه با آیکون</span>
+  <AnchorButton anchorId="دکمه با آیکون" />
+</h3>
+
+<p>آیکون‌ها می‌توانند ابتدا یا انتهای دکمه قرار بگیرند.</p>
+
+<ul>
+  <li>
+    <strong>دکمه با آیکون ابتدایی:</strong> همهٔ دکمه‌ها می‌توانند آیکون ابتدایی
+    داشته باشند تا کنش مربوط به خودشان را واضح‌تر ابراز کنند. توصیه می‌کنیم در
+    صورت امکان از آیکون‌های SVG و یا از آیکونْ فونتِ طراحی‌شده با قواعد سنّت
+    استفاده کنید.
+  </li>
+  <li>
+    <strong>دکمه با آیکون انتهایی:</strong> هنگامی که کنش دکمه در جهت مشخصی از
+    رابط کاربر اعمال می‌شود، می توان از آیکون‌هایی که این جهت را برای پیش‌آگاهی
+    کاربر نمایش می‌دهند، استفاده کرد. به عنوان مثال دکمه‌هایی که با فشردن آن‌ها
+    منوهای کشویی در جهتی مشخص باز می‌شوند.
+  </li>
+</ul>
+
+<Divider dotted />
+
+<h3>
+  <span>دکمه آیکون</span>
+  <AnchorButton anchorId="دکمه آیکون" />
+</h3>
+
+<p>
+  دکمه‌ آیکون‌ها بیش‌تر در نوار ابزارها و منوهای راهبری استفاده می‌شوند و یا
+  موقعیت‌هایی که باید در حداقل فضای موجود، چند کنش مختلف را در رابط کاربر فراهم
+  کنید.
+</p>
+
+<Divider spaced />
+
+<h2>
+  <span>انواع</span>
+  <AnchorButton anchorId="انواع" />
+</h2>
+
+<h3>
+  <span>دکمهٔ توپُر (Filled)</span>
+  <AnchorButton anchorId="دکمهٔ توپُر (Filled)" />
+</h3>
+
+<p>
+  دکمه‌های توپر با کادری که رنگ زمینه دارد، مشخص می‌شوند و با ویژگی‌هایی نظیر
+  رنگ اصلی برند در زمینه و سایه‌دار شدن و ارتفاع‌گرفتن از سطح کلی زمینه، از سایر
+  دکمه‌ها متمایز می‌شوند. کنش با درجهٔ اهمیت بالا در صفحهٔ نمایش یا کنش اصلی در
+  کامپوننت‌های پیچیده باید به این دکمه‌ها اختصاص یابند.
+</p>
+
+<Divider dotted />
+
+<h3>
+  <span>دکمهٔ توخالی (Outlined)</span>
+  <AnchorButton anchorId="دکمهٔ توخالی (Outlined)" />
+</h3>
+
+<p>
+  دکمه‌های توخالی رنگ زمینه ندارند، با دسنی نازک از محیط اطراف جدا می‌شوند و
+  شامل متنی ساده‌اند. این نوع دکمه‌ها برای محتوایی با درجهٔ اهمیت متوسط و پایین
+  بسیار مناسب‌اند تا آن‌جا که مخل تمرکز بر CTA اصلی نشوند. زیرا در حالت ایده‌آل
+  انتظار دارید کاربر ابتدا CTA اصلی را ببیند و بعد به دکمهٔ ثانویه توجه کند.
+  می‌توان با استفاده‌کردن یا نکردن رنگ برند در دسن و متن لیبل این دکمه‌ها میان
+  درجه اهمیت کنش‌های آن‌ها تمایز ایجاد کرد.
+</p>
+
+<Divider dotted />
+
+<h3>
+  <span>دکمهٔ متنی (Inlined)</span>
+  <AnchorButton anchorId="دکمهٔ متنی (Inlined)" />
+</h3>
+
+<p>
+  نداشتن رنگ زمینه قبل از هاور یا فوکوس‌کردن کاربر، این دکمه‌ها را از CTA اصلی
+  جدا می‌کند. این نوع از دکمه‌ها برای کنش‌هایی با درجه اهمیت پایین یا برای
+  بیش‌تر به‌چشم آمدن CTA اصلی بسیار مناسب‌اند. دکمه‌های متنی اغلب در
+  کامپوننت‌هایی مانند کارت یا دیالوگ‌ها استفاده می‌شوند زیرا آن‌ها مانند باقی
+  دکمه‌ها مرز مشخصی در لبه‌های خود ندارند و چون از محتوای مجاور دور نیستند، کم
+  شدنِ تمرکز روی محتوای مهم‌تر در کامپوننت اصلی را به حداقل می‌رسانند.
+</p>
+
+<Divider spaced />
+
+<h2>
+  <span>آناتومی</span>
+  <AnchorButton anchorId="آناتومی" />
+</h2>
+
+<p>
+  اینجا می‌توانید ابعاد دکمه‌ها، فاصله‌ها، حاشیه‌ها و اندازهٔ متن و آیکون را در
+  موقعیت‌های نرمال و آیکون (ابتدایی/انتهایی)، در دو مقیاس متفاوت، ببینید.
+</p>
+
+<div data-columnWrapper>
+  <Row>
+    <Column all="12" sm="6">
+      <div data-column>
+        <Anatomy
+          caption="دکمه"
+          imageProps={{
+            mainSrc: "/static/media/button-anatomy-1.svg",
+            specSrc: "/static/media/button-anatomy-1-spec.svg",
+            alt: "دکمه",
+            unoptimized: true,
+            width: 200,
+            height: 200
+          }}
+        />
+      </div>
+    </Column>
+    <Column all="12" sm="6">
+      <div data-column>
+        <Anatomy
+          caption="دکمه با آیکون ابتدایی"
+          imageProps={{
+            mainSrc: "/static/media/button-anatomy-2.svg",
+            specSrc: "/static/media/button-anatomy-2-spec.svg",
+            alt: "دکمه با آیکون ابتدایی",
+            unoptimized: true,
+            width: 200,
+            height: 200
+          }}
+        />
+      </div>
+    </Column>
+    <Column all="12" sm="6">
+      <div data-column>
+        <Anatomy
+          caption="دکمه با آیکون ابتدایی و انتهایی"
+          imageProps={{
+            mainSrc: "/static/media/button-anatomy-3.svg",
+            specSrc: "/static/media/button-anatomy-3-spec.svg",
+            alt: "دکمه با آیکون ابتدایی و انتهایی",
+            unoptimized: true,
+            width: 200,
+            height: 200
+          }}
+        />
+      </div>
+    </Column>
+    <Column all="12" sm="6">
+      <div data-column>
+        <Anatomy
+          caption="دکمه آیکون"
+          imageProps={{
+            mainSrc: "/static/media/button-anatomy-4.svg",
+            specSrc: "/static/media/button-anatomy-4-spec.svg",
+            alt: "دکمه آیکون",
+            unoptimized: true,
+            width: 200,
+            height: 200
+          }}
+        />
+      </div>
+    </Column>
+  </Row>
+</div>
+
+<div>
+  <p></p>
+  <Divider spaced />
+</div>
+
+<h2>
+  <span>رفتار</span>
+  <AnchorButton anchorId="رفتار" />
+</h2>
+
+<p>
+  در راهنمای زیر رفتار کامپوننت در کاربردهای مختلف دیزاین توضیح داده شده است.
+</p>
+
+<div data-columnWrapper>
+  <Row>
+    <Column all="12" sm="6">
+      <div data-column>
+        <Behaviour
+          variant="do"
+          caption="در نوار پایین و ردیف‌های دکمه، اگر فقط از یک دکمهٔ توپُر و یا دکمهٔ توخالی استفاده کردید، در موبایل باید آن را با عرض تمام‌صفحه نمایش دهید."
+          imageProps={{
+            src: "/static/media/button-behaviour-1.svg",
+            alt: "در نوار پایین و ردیف‌های دکمه، اگر فقط از یک دکمهٔ توپُر و یا دکمهٔ توخالی استفاده کردید، در موبایل باید آن را با عرض تمام‌صفحه نمایش دهید.",
+            unoptimized: true,
+            width: 422,
+            height: 344
+          }}
+        />
+      </div>
+    </Column>
+    <Column all="12" sm="6">
+      <div data-column>
+        <Behaviour
+          variant="do"
+          caption="در نوار پایین و ردیف‌های دکمه، اگر از دو دکمه استفاده کردید، در موبایل باید هر کدام با عرض نصف تمام‌صفحه نمایش داده شوند."
+          imageProps={{
+            src: "/static/media/button-behaviour-2.svg",
+            alt: "در نوار پایین و ردیف‌های دکمه، اگر از دو دکمه استفاده کردید، در موبایل باید هر کدام با عرض نصف تمام‌صفحه نمایش داده شوند.",
+            unoptimized: true,
+            width: 422,
+            height: 344
+          }}
+        />
+      </div>
+    </Column>
+    <Column all="12">
+      <div data-column>
+        <Behaviour
+          variant="dont"
+          caption="لیبل دکمه‌ها نباید به‌قدری طولانی باشد که به دوخط یا بیشتر شکسته شود."
+          imageProps={{
+            src: "/static/media/button-behaviour-3.svg",
+            alt: "لیبل دکمه‌ها نباید به‌قدری طولانی باشد که به دوخط یا بیشتر شکسته شود.",
+            unoptimized: true,
+            width: 860,
+            height: 240
+          }}
+        />
+      </div>
+    </Column>
+    <Column all="12">
+      <div data-column>
+        <Behaviour
+          variant="dont"
+          caption="با توجه به فضای موجود در چیدمان صفحه، زمانی که می‌توان دو دکمه را کنار هم قرار داد از قرار دادن آن‌ها روی هم پرهیز کنید."
+          imageProps={{
+            src: "/static/media/button-behaviour-4.svg",
+            alt: "با توجه به فضای موجود در چیدمان صفحه، زمانی که می‌توان دو دکمه را کنار هم قرار داد از قرار دادن آن‌ها روی هم پرهیز کنید.",
+            unoptimized: true,
+            width: 860,
+            height: 320
+          }}
+        />
+      </div>
+    </Column>
+    <Column all="12">
+      <div data-column>
+        <Behaviour
+          variant="dont"
+          caption="در دکمه‌های متنی از لیبل مختصر استفاده کنید. استفاده از لیبل طولانی باعث می‌شود آن‌ها با متن‌هایی که در رابط کاربر کنش‌گر نیستند، اشتباه گرفته شود."
+          imageProps={{
+            src: "/static/media/button-behaviour-5.svg",
+            alt: "در دکمه‌های متنی از لیبل مختصر استفاده کنید. استفاده از لیبل طولانی باعث می‌شود آن‌ها با متن‌هایی که در رابط کاربر کنش‌گر نیستند، اشتباه گرفته شود.",
+            unoptimized: true,
+            width: 860,
+            height: 240
+          }}
+        />
+      </div>
+    </Column>
+    <Column all="12">
+      <div data-column>
+        <Behaviour
+          variant="do"
+          caption="استفاده از دکمهٔ توپر در یک ردیف افقی با کامپوننت‌های دیگری که نمایش‌دهندهٔ اطلاعاتی از جزئیات صفحه‌اند، میسر است."
+          imageProps={{
+            src: "/static/media/button-behaviour-6.svg",
+            alt: "استفاده از دکمهٔ توپر در یک ردیف افقی با کامپوننت‌های دیگری که نمایش‌دهندهٔ اطلاعاتی از جزئیات صفحه‌اند، میسر است.",
+            unoptimized: true,
+            width: 860,
+            height: 320
+          }}
+        />
+      </div>
+    </Column>
+    <Column all="12" sm="6">
+      <div data-column>
+        <Behaviour
+          variant="do"
+          caption="در دکمه‌ها برای متمایز‌کردن و اولویت‌بندی کنش‌هایی با درجهٔ اهمیت متفاوت از الگویی مناسب استفاده کنید. الگوی مناسب ترکیبی از یک دکمهٔ توپُر در کنار یک دکمهٔ توخالی یا متنی است."
+          imageProps={{
+            src: "/static/media/button-behaviour-7.svg",
+            alt: "در دکمه‌ها برای متمایز‌کردن و اولویت‌بندی کنش‌هایی با درجهٔ اهمیت متفاوت از الگویی مناسب استفاده کنید. الگوی مناسب ترکیبی از یک دکمهٔ توپُر در کنار یک دکمهٔ توخالی یا متنی است.",
+            unoptimized: true,
+            width: 422,
+            height: 344
+          }}
+        />
+      </div>
+    </Column>
+    <Column all="12" sm="6">
+      <div data-column>
+        <Behaviour
+          variant="dont"
+          caption="از دو دکمهٔ توپُر با رنگ زمینهٔ یکسان در کنار هم استفاده نکنید."
+          imageProps={{
+            src: "/static/media/button-behaviour-8.svg",
+            alt: "از دو دکمهٔ توپُر با رنگ زمینهٔ یکسان در کنار هم استفاده نکنید.",
+            unoptimized: true,
+            width: 422,
+            height: 344
+          }}
+        />
+      </div>
+    </Column>
+  </Row>
+</div>
+
+<div>
+  <p></p>
+  <Divider spaced />
+</div>
+
+<h2>
+  <span>نگارش</span>
+  <AnchorButton anchorId="نگارش" />
+</h2>
+
+<ul>
+  <li>از علائم نگارشی در متن دکمه‌ها استفاده نکنید.</li>
+  <li>برای متن هر دکمه می‌توانید حداکثر ۴ کلمه بنویسید.</li>
+</ul>

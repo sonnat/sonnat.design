@@ -1,0 +1,343 @@
+import Divider from "@sonnat/ui/Divider";
+import Row from "@sonnat/ui/Row";
+import Column from "@sonnat/ui/Column";
+import Code from "@sonnat/ui/Code";
+import Image from "components/Image";
+import Behaviour from "components/Behaviour";
+import Anatomy from "components/Anatomy";
+import AnchorButton from "components/AnchorButton";
+import WithTableOfContent from "components/layouts/WithTableOfContent";
+import Head from "next/head";
+import { defaultKeywordsMetaContent, siteFullAddress } from "sharedVars";
+import {
+  setCanonicalMeta,
+  setDescriptionMeta,
+  setKeywordsMeta,
+  setTitleMeta
+} from "utils";
+
+export const meta = {
+  title: "نشانگرِ پیشرفت",
+  description:
+    "نشانگر پیشرفت مدت زمان مشخص یا نامشخصی را که باید برای انجام‌شدن یک فرایند منتظر ماند، نمایش می‌دهد.",
+  getLayout: () => page =>
+    (
+      <WithTableOfContent
+        tableData={[
+          { id: "معرفی", label: "معرفی" },
+          { id: "کاربرد", label: "کاربرد" },
+          { id: "انواع", label: "انواع" },
+          { id: "آناتومی", label: "آناتومی" },
+          { id: "رفتار", label: "رفتار" }
+        ]}
+      >
+        {page}
+      </WithTableOfContent>
+    )
+};
+
+<Head>
+  {setTitleMeta(`${meta.title} | دیزاین سیستم سنّت`)}
+  {setDescriptionMeta(meta.description)}
+  {setCanonicalMeta(`${siteFullAddress}/components/Progress`)}
+  {setKeywordsMeta([
+    ...defaultKeywordsMetaContent,
+    "progress",
+    "indicator",
+    "progress indicator",
+    "نشانگرِ پیشرفت",
+    "نشانگر پیشرفت"
+  ])}
+</Head>
+
+<h1>
+  <span>{meta.title}</span>
+  <AnchorButton anchorId="معرفی" />
+</h1>
+
+<p data-subtitle>
+  نشانگر پیشرفت خطی (Linear)، دایره‌ای (Circular)، نقطه‌ای (Dotted)
+</p>
+
+<p>{meta.description}</p>
+
+<h2>
+  <span>کاربرد</span>
+  <AnchorButton anchorId="کاربرد" />
+</h2>
+
+<p>
+  نشانگرهای پیشرفت وضعیت کنشی در حال انجام‌شدن، بارگذاری، دریافت یا تأیید
+  اطلاعات و یا ذخیره‌کردن به‌روزرسانی را نشان می‌دهند. این نشانگرها بیشتر در
+  صفحاتی حاوی فرم‌ها و یا المان‌های ارسال‌کنندهٔ اطلاعات استفاده می‌شوند.
+</p>
+
+<h3>
+  <span>مشخص (Determinate)</span>
+  <AnchorButton anchorId="مشخص (Determinate)" />
+</h3>
+
+<p>
+  نشانگر مشخص زمانی استفاده می‌شود که طول انجام‌شدن فرآیند معلوم باشد.
+  <br />
+  فرآیندهایی مانند دریافت اطلاعات، بارگذاری اطلاعات و انجام برخی تنظیمات خودکار
+  هنگام شروع برنامه از این نوع‌اند.
+</p>
+
+<Divider dotted />
+
+<h3>
+  <span>نامشخص (Indeterminate)</span>
+  <AnchorButton anchorId="نامشخص (Indeterminate)" />
+</h3>
+
+<p>
+  نشانگر نامشخص زمانی استفاده می‌شود که طول انجام‌شدن فرآیند تخمین‌زدنی نبوده و
+  یا نیازی به نمایش آن نباشد. این کامپوننت نشان‌دهندهٔ مدت زمان نامعلومی از
+  انتظار است.
+</p>
+
+<Divider dotted />
+
+<h3>
+  <span>بارگذاری صفحه (Page Progress)</span>
+  <AnchorButton anchorId="بارگذاری صفحه (Page Progress)" />
+</h3>
+
+<p>برای نمایش بارگذاری صفحه‌ای کامل از نشانگرهای خطی استفاده می‌شود.</p>
+
+<Divider dotted />
+
+<h3>
+  <span>بارگذاری بخش (Section Progress)</span>
+  <AnchorButton anchorId="بارگذاری بخش (Section Progress)" />
+</h3>
+
+<p>
+  برای نمایش بارگذاری بخشی از صفحه، می‌توان از نشانگرهای خطی و هم از نشانگرهای
+  دایره‌ای استفاده کرد. ولی استفاده از نوع دایره‌ای پیشنهاد می‌شود.
+</p>
+
+<Divider spaced />
+
+<h2>
+  <span>انواع</span>
+  <AnchorButton anchorId="انواع" />
+</h2>
+
+<h3>
+  <span>خطی</span>
+  <AnchorButton anchorId="خطی" />
+</h3>
+
+<p>
+  نشانگرهایِ پیشرفتِ خطی برای فرآیندهایی مانند دریافت اطلاعات، بارگذاری،
+  نشان‌دادن زمان انجام‌شدن کنش و... استفاده می‌شوند. آن‌ها می‌توانند نماینده‌ی
+  فرایند‌های مشخص و نامشخص باشند.
+</p>
+
+<Divider dotted />
+
+<h3>
+  <span>دایره‌ای</span>
+  <AnchorButton anchorId="دایره‌ای" />
+</h3>
+
+<p>
+  نشانگرهایِ پیشرفتِ دایره‌ای مانند نشانگرهای خطی، روند انجام عملیات سیستمی
+  مانند دریافت اطلاعات، بارگذاری اطلاعات، انجام محاسبات و غیره را نشان می‌دهند و
+  می‌توانند نمایندهٔ فرایند‌های مشخص و نامشخص باشند.
+  <br />
+  نشانگرهای دایره‌ای نسبت به نشانگرهای خطی فضای کمتری اشغال می‌کنند و برای
+  استفاده در فضاهای محدود مناسب‌اند.
+</p>
+
+<Divider dotted />
+
+<h3>
+  <span>نقطه‌ای</span>
+  <AnchorButton anchorId="نقطه‌ای" />
+</h3>
+
+<p>
+  نشانگرهایِ پیشرفتِ نقطه‌ای فقط برای فرایندهای نامشخص استفاده می‌شوند و ۲ حالت
+  دارند:
+</p>
+
+<ul>
+  <li>
+    <strong>ارسال:</strong> از این نوع نشانگر برای بارگذاری اطلاعات مانند
+    ثبت‌کردن فرم‌ها استفاده می‌شود.
+  </li>
+  <li>
+    <strong>انتظار:</strong> این نشانگر اغلب برای نمایش زمان انتظار بارگیری
+    اطلاعات استفاده می‌شود.
+  </li>
+</ul>
+
+<Image
+  caption="انواع نشانگرهای پیشرفت"
+  imageProps={{
+    src: "/static/media/progress-variations.svg",
+    alt: "انواع نشانگرهای پیشرفت",
+    unoptimized: true,
+    width: 667,
+    height: 260
+  }}
+/>
+
+<div>
+  <p></p>
+  <Divider spaced />
+</div>
+
+<h2>
+  <span>آناتومی</span>
+  <AnchorButton anchorId="آناتومی" />
+</h2>
+
+<p>اینجا می‌توانید ابعاد و مشخصه‌های نشانگرهای پیشرفت را ببینید.</p>
+
+<div data-columnWrapper>
+  <Row>
+    <Column all="12">
+      <div data-column>
+        <Anatomy
+          caption="نشانگر پیشرفت خطی"
+          imageProps={{
+            mainSrc: "/static/media/progress-anatomy-1.svg",
+            specSrc: "/static/media/progress-anatomy-1-spec.svg",
+            alt: "نشانگر پیشرفت خطی",
+            unoptimized: true,
+            width: 520,
+            height: 128
+          }}
+        />
+      </div>
+    </Column>
+    <Column all="12" sm="6">
+      <div data-column>
+        <Anatomy
+          caption="نشانگر پیشرفت دایره‌ای"
+          imageProps={{
+            mainSrc: "/static/media/progress-anatomy-2.svg",
+            specSrc: "/static/media/progress-anatomy-2-spec.svg",
+            alt: "نشانگر پیشرفت دایره‌ای",
+            unoptimized: true,
+            width: 100,
+            height: 100
+          }}
+        />
+      </div>
+    </Column>
+    <Column all="12" sm="6">
+      <div data-column>
+        <Anatomy
+          caption="نشانگر پیشرفت نقطه‌ای حالت ارسال"
+          imageProps={{
+            mainSrc: "/static/media/progress-anatomy-3.svg",
+            specSrc: "/static/media/progress-anatomy-3-spec.svg",
+            alt: "نشانگر پیشرفت نقطه‌ای حالت ارسال",
+            unoptimized: true,
+            width: 150,
+            height: 150
+          }}
+        />
+      </div>
+    </Column>
+    <Column all="12" sm="6">
+      <div data-column>
+        <Anatomy
+          caption="نشانگر پیشرفت نقطه‌ای حالت انتظار"
+          imageProps={{
+            mainSrc: "/static/media/progress-anatomy-4.svg",
+            specSrc: "/static/media/progress-anatomy-4-spec.svg",
+            alt: "نشانگر پیشرفت نقطه‌ای حالت انتظار",
+            unoptimized: true,
+            width: 100,
+            height: 100
+          }}
+        />
+      </div>
+    </Column>
+  </Row>
+</div>
+
+<div>
+  <p></p>
+  <Divider spaced />
+</div>
+
+<h2>
+  <span>رفتار</span>
+  <AnchorButton anchorId="رفتار" />
+</h2>
+
+<p>
+  در راهنمای زیر رفتار کامپوننت در کاربردهای مختلف دیزاین توضیح داده شده است.
+</p>
+
+<div data-columnWrapper>
+  <Row>
+    <Column all="12">
+      <div data-column>
+        <Behaviour
+          variant="dont"
+          caption="لازم نیست نشانگرهای پیشرفت روی همهٔ دکمه‌های صفحه قرار گیرد. استفادهٔ بیش از حد از این کامپوننت در صفحه، مخل کنش‌های کاربر می‌شود."
+          imageProps={{
+            src: "/static/media/progress-behaviour-1.svg",
+            alt: "لازم نیست نشانگرهای پیشرفت روی همهٔ دکمه‌های صفحه قرار گیرد. استفادهٔ بیش از حد از این کامپوننت در صفحه، مخل کنش‌های کاربر می‌شود.",
+            unoptimized: true,
+            width: 860,
+            height: 422
+          }}
+        />
+      </div>
+    </Column>
+    <Column all="12">
+      <div data-column>
+        <Behaviour
+          variant="dont"
+          caption="وقتی نشانگر پیشرفت در کامپوننتی قرار بگیرد، ابعاد نگه‌دارندهٔ آن کامپوننت نباید تغییر کند. در این شرایط کامپوننت‌ها می‌توانند غیرفعال شوند."
+          imageProps={{
+            src: "/static/media/progress-behaviour-2.svg",
+            alt: "وقتی نشانگر پیشرفت در کامپوننتی قرار بگیرد، ابعاد نگه‌دارندهٔ آن کامپوننت نباید تغییر کند. در این شرایط کامپوننت‌ها می‌توانند غیرفعال شوند.",
+            unoptimized: true,
+            width: 860,
+            height: 296
+          }}
+        />
+      </div>
+    </Column>
+    <Column all="12" sm="6">
+      <div data-column>
+        <Behaviour
+          variant="do"
+          caption="برای نمایش فرایندهای کوتاه (زیر ۵ ثانیه) و نامشخص بهتر است برای جلب توجه کاربر از نشانگرهای دایره‌ای استفاده شود."
+          imageProps={{
+            src: "/static/media/progress-behaviour-3.svg",
+            alt: "برای نمایش فرایندهای کوتاه (زیر ۵ ثانیه) و نامشخص بهتر است برای جلب توجه کاربر از نشانگرهای دایره‌ای استفاده شود.",
+            unoptimized: true,
+            width: 422,
+            height: 344
+          }}
+        />
+      </div>
+    </Column>
+    <Column all="12" sm="6">
+      <div data-column>
+        <Behaviour
+          variant="do"
+          caption="نشانگرهای دایره‌ای و نقطه‌ای در مرکز نگه‌دارندهٔ کامپوننت مورد نظر نمایش داده می‌شوند."
+          imageProps={{
+            src: "/static/media/progress-behaviour-4.svg",
+            alt: "نشانگرهای دایره‌ای و نقطه‌ای در مرکز نگه‌دارندهٔ کامپوننت مورد نظر نمایش داده می‌شوند.",
+            unoptimized: true,
+            width: 422,
+            height: 344
+          }}
+        />
+      </div>
+    </Column>
+  </Row>
+</div>

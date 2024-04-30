@@ -1,0 +1,93 @@
+import Divider from "@sonnat/ui/Divider";
+import Row from "@sonnat/ui/Row";
+import Column from "@sonnat/ui/Column";
+import Code from "@sonnat/ui/Code";
+import Image from "components/Image";
+import Behaviour from "components/Behaviour";
+import Anatomy from "components/Anatomy";
+import AnchorButton from "components/AnchorButton";
+import WithTableOfContent from "components/layouts/WithTableOfContent";
+import Head from "next/head";
+import { defaultKeywordsMetaContent, siteFullAddress } from "sharedVars";
+import {
+  setCanonicalMeta,
+  setDescriptionMeta,
+  setKeywordsMeta,
+  setTitleMeta
+} from "utils";
+
+export const meta = {
+  title: "ردیف سنجش",
+  description:
+    "ردیف‌های سنجش برای نشان دادن وضعیت المانی در بازه‌های پیوسته استفاده می‌شوند. بازه‌ها از ۳ بخش پایینی، میانی و بالایی تشکیل شده‌اند و از نشانگری نیز برای نشان دادن وضعیت المان در بازه استفاده می‌شود. نشانگر می‌تواند در هر نقطه از ردیف با درصدی مشخص قرار بگیرد.",
+  getLayout: () => page =>
+    (
+      <WithTableOfContent
+        tableData={[
+          { id: "معرفی", label: "معرفی" },
+          { id: "کاربرد", label: "کاربرد" }
+        ]}
+      >
+        {page}
+      </WithTableOfContent>
+    )
+};
+
+<Head>
+  {setTitleMeta(`${meta.title} | دیزاین سیستم سنّت`)}
+  {setDescriptionMeta(meta.description)}
+  {setCanonicalMeta(`${siteFullAddress}/components/divar/EvaluationRow`)}
+  {setKeywordsMeta([...defaultKeywordsMetaContent, "evaluation row"])}
+</Head>
+
+<h1>
+  <span>{meta.title}</span>
+  <AnchorButton anchorId="معرفی" />
+</h1>
+
+<p>{meta.description}</p>
+
+<h2>
+  <span>کاربرد</span>
+  <AnchorButton anchorId="کاربرد" />
+</h2>
+
+<p>
+  ردیف سنجش برای ارزیابی، نشان دادن کیفیت، تعداد و وضعیت المان به کار می‌رود.
+  قیمت، سلامت، تعداد و هر متغیر دیگری که پیوسته باشد، می‌تواند با ردیف سنجش
+  نمایش داده شود.
+</p>
+
+<Image
+  caption="ردیف سنجش"
+  imageProps={{
+    src: "/static/media/evaluation-row-1.svg",
+    alt: "ردیف سنجش",
+    unoptimized: true,
+    width: 860,
+    height: 156
+  }}
+/>
+
+<h3>
+  <span>بازه‌ها</span>
+  <AnchorButton anchorId="بازه‌ها" />
+</h3>
+
+<p>
+  این کامپوننت از ۳ بازهٔ مجزا با طول برابر تشکیل شده است که هر کدام رنگ متفاوتی
+  دارند. رنگ هشدار ثانویه برای بازهٔ بالایی، رنگ موفقیت ثانویه برای بازهٔ میانی
+  و رنگ موفقیت اصلی برای بازهٔ پایینی استفاده می‌شود.
+</p>
+
+<Divider dotted />
+
+<h3>
+  <span>نشانگر</span>
+  <AnchorButton anchorId="نشانگر" />
+</h3>
+
+<p>
+  در این کامپوننت نشانگر مقدار متغیر ویژگی را روی بازه‌ها و عنوان ویژگی را با
+  راهنمای ابزار دنباله‌داری که می تواند آیکون داشته باشد نمایش می‌دهد.
+</p>

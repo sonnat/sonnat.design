@@ -1,0 +1,360 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="860" height="428" viewBox="0 0 860 428">
+  <defs>
+    <clipPath id="clip" clipPathUnits="userSpaceOnUse">  
+     <rect x="0" y="0" width="500" height="302"   />  
+   </clipPath> 
+    <rect id="layout-b" width="520" height="300" x="0" y="0" rx="4"/>
+    <filter id="layout-a" width="110%" height="117.3%" x="-5%" y="-7.3%" filterUnits="objectBoundingBox">
+      <feOffset dy="4" in="SourceAlpha" result="shadowOffsetOuter1"/>
+      <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="8"/>
+      <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.12 0"/>
+    </filter>
+  </defs>
+<style>
+@keyframes screen {
+0%{
+transform:translate(170px, 64px) scale(1, 1);
+transform-origin:260px 0px;
+}
+20%{
+transform:translate(170px, 64px) scale(1, 1);
+transform-origin:260px 0px;
+}
+30%{
+transform:translate(170px, 64px) scale(1, 1);
+transform-origin:260px 0px;
+}
+40%{
+transform:translate(170px, 64px) scale(.4, 1.14);
+transform-origin:260px 0px;
+}
+70%{
+transform:translate(170px, 64px) scale(.4, 1.14);
+transform-origin:260px 0px;
+}
+85%{
+transform:translate(170px, 64px) scale(1, 1);
+transform-origin:260px 0px;
+}
+100%{
+transform:translate(170px, 64px) scale(1, 1);
+transform-origin:260px 0px;
+}
+}
+@keyframes grid {
+0%{
+transform:translate(238px, 64px) scale(1, 0);
+transform-origin:192px 0px;
+opacity:1;
+}
+ 
+14%{
+transform:translate(238px, 64px) scale(1, 1);
+transform-origin:192px 0px;
+opacity:1;
+}
+30%{
+transform:translate(238px, 64px) scale(1, 1);
+transform-origin:192px 0px;
+opacity:1;
+}
+40%{
+transform:translate(238px, 64px) scale(.52, 1.14);
+transform-origin:192px 0px;
+opacity:1;
+}
+70%{
+transform:translate(238px, 64px) scale(.52, 1.14);
+transform-origin:192px 0px;
+opacity:1;
+}
+80%{
+transform:translate(238px, 64px) scale(1, 1);
+transform-origin:192px 0px;
+opacity:1;
+}
+100%{
+transform:translate(238px, 64px) scale(1, 0);
+transform-origin:192px 0px;
+opacity:1;
+}
+}
+@keyframes header {
+0%{
+transform: scale(1, 1);
+transform-origin:260px 0;
+}
+20%{
+transform: scale(1, 1);
+transform-origin:260px 0;
+ }
+30%{
+transform: scale(1, 1);
+transform-origin:260px 0;
+ }
+ 40%{
+transform: scale(.4, 1);
+transform-origin:260px 0;
+ }
+ 70%{
+transform: scale(.4, 1);
+transform-origin:260px 0;
+ }
+ 85%{
+transform: scale(1, 1);
+transform-origin:260px 0;
+ }
+100%{
+transform: scale(1, 1);
+transform-origin:260px 0;
+ }
+}
+@keyframes carousel {
+0%{
+transform:translate(0px, 0px) scale(1, 1);
+opacity:1;
+}
+ 
+30%{
+transform:translate(0px, 0px) scale(1, 1);
+opacity:1;
+ }
+ 40%{
+transform:translate(91px, -10px) scale(1.06, 1);
+opacity:1;
+ }
+ 70%{
+transform:translate(91px, -10px) scale(1.06, 1);
+opacity:1;
+ }
+ 85%{
+transform:translate(0px, 0px) scale(1, 1);
+opacity:1;
+ }
+100%{
+transform:translate(0px, 0px) scale(1, 1);
+opacity:1;
+ }
+}
+@keyframes title {
+0%{
+transform:translate(0px, 0px) scale(1, 1);
+opacity:1;
+}
+ 
+30%{
+transform:translate(0px, 0px) scale(1, 1);
+opacity:1;
+ }
+ 40%{
+transform:translate(-90px, 126px) scale(1.06, 1);
+opacity:1;
+ }
+ 70%{
+transform:translate(-90px, 126px) scale(1.06, 1);
+opacity:1;
+ }
+ 85%{
+transform:translate(0px, 0px) scale(1, 1);
+opacity:1;
+ }
+100%{
+transform:translate(0px, 0px) scale(1, 1);
+opacity:1;
+ }
+}
+@keyframes description {
+0%{
+transform:translate(0px, 0px) scale(1, 1);
+opacity:1;
+}
+ 
+30%{
+transform:translate(0px, 0px) scale(1, 1);
+opacity:1;
+ }
+ 40%{
+transform:translate(-90px, 126px) scale(1.06, 1);
+opacity:1;
+ }
+ 70%{
+transform:translate(-90px, 126px) scale(1.06, 1);
+opacity:1;
+ }
+ 85%{
+transform:translate(0px, 0px) scale(1, 1);
+opacity:1;
+ }
+100%{
+transform:translate(0px, 0px) scale(1, 1);
+opacity:1;
+ }
+}
+@keyframes slider_image_1 {
+0%{
+transform:translate(0px, 0px) scale(1, 1);
+ opacity:1;
+}
+28%{
+transform:translate(0px, 0px) scale(1, 1);
+ opacity:1;
+ }
+ 32%{
+transform:translate(0px, 0px) scale(1, 1);
+ opacity:1;
+ }
+40%{
+transform:translate(-138px, 126px) scale(1.62, 1);
+ opacity:1;
+ }
+ 70%{
+transform:translate(-138px, 126px) scale(1.62, 1);
+opacity:1;
+ }
+ 85%{
+transform:translate(0px, 0px) scale(1, 1);
+opacity:1;
+ }
+100%{
+transform:translate(0px, 0px) scale(1, 1);
+ opacity:1;
+ }
+}
+ @keyframes slider_image_2 {
+0%{
+transform:translate(0px, 0px) scale(1, 1);
+ opacity:1;
+}
+28%{
+transform:translate(0px, 0px) scale(1, 1);
+ opacity:1;
+ }
+36%{
+transform:translate(-120px, 222px) scale(1.62, 1);
+ opacity:1;
+ }
+ 70%{
+transform:translate(-120px, 222px) scale(1.62, 1);
+opacity:1;
+ }
+ 85%{
+transform:translate(0px, 0px) scale(1, 1);
+opacity:1;
+ }
+100%{
+transform:translate(0px, 0px) scale(1, 1);
+ opacity:1;
+ }
+}
+  @keyframes slider_image_3 {
+0%{
+transform:translate(0px, 0px) scale(1, 1);
+ opacity:1;
+}
+28%{
+transform:translate(0px, 0px) scale(1, 1);
+ opacity:1;
+ }
+32%{
+transform:translate(90px, 222px) scale(1.62, 1);
+ opacity:1;
+ }
+ 70%{
+transform:translate(90px, 222px) scale(1.62, 1);
+opacity:1;
+ }
+ 85%{
+transform:translate(0px, 0px) scale(1, 1);
+opacity:1;
+ }
+100%{
+transform:translate(0px, 0px) scale(1, 1);
+ opacity:1;
+ }
+}
+</style>
+  <g fill="none" fill-rule="evenodd"  > 
+    <rect width="860" height="428" rx="4"/>
+    <g transform="translate(170 64)" style="animation:screen 7000ms cubic-bezier(0.83, 0, 0.17, 1) infinite">
+      <use fill="#000" filter="url(#layout-a)" xlink:href="#layout-b"/>
+      <rect width="520" height="300" fill="#FFF" rx="4"/>
+    </g>
+    <g   style="animation:grid 7000ms cubic-bezier(0.83, 0, 0.17, 1) infinite">
+<!-- first column -->
+      <g transform="translate(0)">
+        <rect width="4" height="300"/>
+        <rect width="24" height="300" x="4" fill="#EA475B" fill-opacity=".08"/>
+        <rect width="4" height="300" x="28"/>
+      </g>
+      <g transform="translate(32)">
+        <rect width="4" height="300"/>
+        <rect width="24" height="300" x="4" fill="#EA475B" fill-opacity=".08"/>
+        <rect width="4" height="300" x="28"/>
+      </g>
+      <g transform="translate(64)">
+        <rect width="4" height="300"/>
+        <rect width="24" height="300" x="4" fill="#EA475B" fill-opacity=".08"/>
+        <rect width="4" height="300" x="28"/>
+      </g>
+      <g transform="translate(96)">
+        <rect width="4" height="300"/>
+        <rect width="24" height="300" x="4" fill="#EA475B" fill-opacity=".08"/>
+        <rect width="4" height="300" x="28"/>
+      </g>
+      <g transform="translate(128)">
+        <rect width="4" height="300"/>
+        <rect width="24" height="300" x="4" fill="#EA475B" fill-opacity=".08"/>
+        <rect width="4" height="300" x="28"/>
+      </g>
+      <g transform="translate(160)">
+        <rect width="4" height="300"/>
+        <rect width="24" height="300" x="4" fill="#EA475B" fill-opacity=".08"/>
+        <rect width="4" height="300" x="28"/>
+      </g>
+      <g transform="translate(192)">
+        <rect width="4" height="300"/>
+        <rect width="24" height="300" x="4" fill="#EA475B" fill-opacity=".08"/>
+        <rect width="4" height="300" x="28"/>
+      </g>
+      <g transform="translate(224)">
+        <rect width="4" height="300"/>
+        <rect width="24" height="300" x="4" fill="#EA475B" fill-opacity=".08"/>
+        <rect width="4" height="300" x="28"/>
+      </g>
+      <g transform="translate(256)">
+        <rect width="4" height="300"/>
+        <rect width="24" height="300" x="4" fill="#EA475B" fill-opacity=".08"/>
+        <rect width="4" height="300" x="28"/>
+      </g>
+      <g transform="translate(288)">
+        <rect width="4" height="300"/>
+        <rect width="24" height="300" x="4" fill="#EA475B" fill-opacity=".08"/>
+        <rect width="4" height="300" x="28"/>
+      </g>
+      <g transform="translate(320)">
+        <rect width="4" height="300"/>
+        <rect width="24" height="300" x="4" fill="#EA475B" fill-opacity=".08"/>
+        <rect width="4" height="300" x="28"/>
+      </g>
+      <!-- last column -->
+      <g transform="translate(352)">
+        <rect width="4" height="300"/>
+        <rect width="24" height="300" x="4" fill="#EA475B" fill-opacity=".08"/>
+        <rect width="4" height="300" x="28"/>
+      </g>
+    </g>
+    <g fill="#47ADEA" fill-opacity=".32"   transform="translate(170 64)" >
+      <g transform="translate(72 40)" >
+        <rect width="184" height="128" rx="2" style="animation:carousel 7000ms cubic-bezier(0.83, 0, 0.17, 1) infinite"/>
+        <g clip-path="url(#clip)">     
+        <rect  width="120" height="88" y="136" rx="2" style="animation:slider_image_3 7000ms cubic-bezier(0.83, 0, 0.17, 1) infinite;animation-delay:100ms"/>
+        <rect width="120" height="88" x="128" y="136" rx="2"  style="animation:slider_image_2 7000ms cubic-bezier(0.83, 0, 0.17, 1) infinite;animation-delay:50ms" />
+        <rect  width="120" height="88" x="256" y="136" rx="2" style="animation:slider_image_1 7000ms cubic-bezier(0.83, 0, 0.17, 1) infinite;transform-origin:300px" />
+         </g>
+        <rect width="184" height="32" x="192" rx="2" style="animation:title 7000ms cubic-bezier(0.83, 0, 0.17, 1) infinite; transform-origin:375px 0px"/>
+        <rect width="184" height="88" x="192" y="40" rx="2" style="animation:description 7000ms cubic-bezier(0.83, 0, 0.17, 1) infinite; transform-origin:375px 0px"/>
+      </g>
+      <path d="M4,0 L516,0 C518.209139,-4.05812251e-16 520,1.790861 520,4 L520,24 L520,24 L0,24 L0,4 C-2.705415e-16,1.790861 1.790861,4.05812251e-16 4,0 Z"  style="animation:header 7000ms cubic-bezier(0.83, 0, 0.17, 1) infinite"/>
+    </g>
+  </g>
+</svg>

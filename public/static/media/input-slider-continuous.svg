@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="422px" height="148px" viewBox="0 0 422 148" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>variation_1</title>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="422" height="148" rx="4"></rect>
+        <rect id="path-3" x="71" y="43.8461538" width="280" height="60.3076923" rx="4"></rect>
+        <filter x="-9.3%" y="-36.5%" width="118.6%" height="186.2%" filterUnits="objectBoundingBox" id="filter-4">
+            <feOffset dx="0" dy="4" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="8" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.12 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="RangeSlider" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="variation" transform="translate(-32.000000, -32.000000)">
+            <g id="variation_1" transform="translate(32.000000, 32.000000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <use id="base" fill-opacity="0" fill="#000000" xlink:href="#path-1"></use>
+                <g id="Rectangle" fill="black" fill-opacity="1">
+                    <use filter="url(#filter-4)" xlink:href="#path-3"></use>
+                </g>
+                <rect id="Rectangle" fill="#FFFFFF" x="71" y="43.8461538" width="280" height="60.3076923" rx="4"></rect>
+                <g id="Group" transform="translate(146.671795, 66.666667)">
+                    <g id="control-/-range-/-slider-/-base-/-normal" transform="translate(-0.000000, 7.200000)" fill="#000000" fill-opacity="0.12">
+                        <g id="range_slider_base">
+                            <rect x="0" y="0" width="128.65641" height="1.6" rx="0.8"></rect>
+                        </g>
+                    </g>
+                    <g id="range_slider_content" transform="translate(-0.000000, 0.000000)">
+                        <rect id="range_slider_indicator" fill="#EA475B" fill-rule="nonzero" x="0" y="7.2" width="68.7589744" height="1.6" rx="0.8"></rect>
+                        <g id="element-/-handle-/-slider-/-iconed-/-norm" transform="translate(65.558974, 0.000000)" fill="#FFFFFF" stroke="#000000" stroke-opacity="0.12" stroke-width="0.8">
+                            <g id="element-/-handle-/-slider-/-no-icon-/-norm">
+                                <circle id="slider_handle" cx="8" cy="8" r="7.6"></circle>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

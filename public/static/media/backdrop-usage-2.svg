@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="356" height="297" viewBox="0 0 356 297">
+  <defs>
+    <path id="usage_2-b" d="M7.17006468,61.0038217 L106.889569,110.472658 C111.369385,112.695005 116.630615,112.695005 121.110431,110.472658 L220.836651,61.0004901 C222.815659,60.0187444 223.624099,57.6185797 222.642353,55.6395723 C222.257954,54.8646985 221.632733,54.2353072 220.860431,53.8457656 L117.705747,1.81551259 C115.441741,0.673569152 112.770413,0.672567858 110.505551,1.81281374 L7.14896249,53.8477478 C5.17577946,54.8411479 4.38150848,57.2460387 5.37490862,59.2192218 C5.76433243,59.9927313 6.39427192,60.6189665 7.17006468,61.0038217 Z"/>
+    <filter id="usage_2-a" width="114.3%" height="134.8%" x="-7.2%" y="-12.5%" filterUnits="objectBoundingBox">
+      <feMorphology in="SourceAlpha" operator="dilate" radius=".25" result="shadowSpreadOuter1"/>
+      <feOffset dy="6" in="shadowSpreadOuter1" result="shadowOffsetOuter1"/>
+      <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="6"/>
+      <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"/>
+      <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.08 0"/>
+    </filter>
+    <path id="usage_2-d" d="M1.42108547e-14,56.3237718 L86.9341952,98.566603 C91.3906407,100.732067 96.5988895,100.710743 101.037454,98.5088608 L196.773493,51.0161407 C198.752501,50.034395 199.560941,47.6342304 198.579196,45.6552229 C198.190535,44.8717585 197.555812,44.2372636 196.772208,43.8488836 L110.102598,0.892555397 L110.102598,0.892555397 L1.42108547e-14,56.3237718 Z"/>
+    <filter id="usage_2-c" width="118.1%" height="139.7%" x="-10.3%" y="-14.8%" filterUnits="objectBoundingBox">
+      <feOffset dy="6" in="SourceAlpha" result="shadowOffsetOuter1"/>
+      <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="6"/>
+      <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"/>
+      <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.12 0"/>
+    </filter>
+
+<style>
+  @keyframes dimmer{
+      0%{
+        opacity:0;
+        transform: translate(0px, -48px) scale(1)
+      }
+      20%{
+        opacity:0;
+        transform: translate(0px, -48px) scale(1)
+      }
+            36%{
+        opacity:1;
+        transform: translate(0px, 0px) scale(1)
+      }
+                  80%{
+        opacity:1;
+        transform: translate(0px, 0px) scale(1)
+      }
+                  86%{
+         opacity:0;
+        transform: translate(0px, -48px) scale(1)
+      }
+                  100%{
+        opacity:0;
+        transform: translate(0px, -48px) scale(1)
+      }
+    }
+
+
+
+@keyframes progress{
+    0%{
+stroke-dasharray: 0, 123;
+stroke-dashoffset: 0;
+opacity:0
+}
+ 
+37%{
+stroke-dasharray: 0, 123;
+stroke-dashoffset: 0;
+opacity:0
+      }
+
+70%{
+stroke-dasharray: 123, 123;
+stroke-dashoffset: 0;
+opacity:1
+      }
+
+80%{
+stroke-dasharray: 123, 123;
+stroke-dashoffset: 0;
+opacity:0
+      }
+
+      100%{
+stroke-dasharray: 123, 123;
+stroke-dashoffset: 0;
+opacity:0
+      }
+
+}
+</style>
+
+
+  </defs>
+  <g fill="none" fill-rule="evenodd">
+    <rect width="356" height="297"/>
+    <g transform="translate(64.4 98.263)">
+      <g transform="translate(0 3)">
+        <path fill="#FFF" stroke="#000000" stroke-opacity=".12" stroke-width=".5" d="M7.17006468,63.0038217 L106.889569,112.472658 C111.369385,114.695005 116.630615,114.695005 121.110431,112.472658 L220.836651,63.0004901 C222.815659,62.0187444 223.624099,59.6185797 222.642353,57.6395723 C222.257954,56.8646985 221.632733,56.2353072 220.860431,55.8457656 L117.705747,3.81551259 C115.441741,2.67356915 112.770413,2.67256786 110.505551,3.81281374 L7.14896249,55.8477478 C5.17577946,56.8411479 4.38150848,59.2460387 5.37490862,61.2192218 C5.76433243,61.9927313 6.39427192,62.6189665 7.17006468,63.0038217 Z"/>
+        <use fill="#000" filter="url(#usage_2-a)" xlink:href="#usage_2-b"/>
+        <use fill="#FFF" stroke="#000000" stroke-opacity=".12" stroke-width=".5" xlink:href="#usage_2-b"/>
+        <line x1="15.514" x2="129.066" y1="64.951" y2="7.598" stroke="#000000" stroke-opacity=".24" stroke-width=".2"/>
+      </g>
+      <g transform="translate(19)"  >
+        <use fill="#000" filter="url(#usage_2-c)" xlink:href="#usage_2-d" style="animation: dimmer 6000ms ease infinite;transform-origin:100px 80px"/>
+        <use fill="#FFF" fill-opacity=".48" xlink:href="#usage_2-d" style="animation: dimmer 6000ms ease infinite;transform-origin:100px 80px"/>
+        <line x1=".461" x2="110.103" y1="56.231" y2=".893" stroke="#EA475B" stroke-width="2" stroke-linecap="round" style="animation: progress 6000ms ease infinite;"/>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,333 @@
+import Divider from "@sonnat/ui/Divider";
+import Row from "@sonnat/ui/Row";
+import Column from "@sonnat/ui/Column";
+import Code from "@sonnat/ui/Code";
+import Image from "components/Image";
+import Behaviour from "components/Behaviour";
+import AnchorButton from "components/AnchorButton";
+import WithTableOfContent from "components/layouts/WithTableOfContent";
+import Head from "next/head";
+import { defaultKeywordsMetaContent, siteFullAddress } from "sharedVars";
+import {
+  setCanonicalMeta,
+  setDescriptionMeta,
+  setKeywordsMeta,
+  setTitleMeta
+} from "utils";
+
+export const meta = {
+  title: "گرید و نقاط‌ شکست",
+  description:
+    "چیدمان صفحات در ساختار گرید شکل می‌گیرد و با وجود نقاط شکست، در تمام دستگاه‌ها رفتاری منعطف و پیش‌بینی‌پذیر خواهد داشت.",
+  getLayout: () => page =>
+    (
+      <WithTableOfContent
+        tableData={[
+          { id: "معرفی", label: "معرفی" },
+          { id: "گرید واکنش‌گرا", label: "گرید واکنش‌گرا" },
+          { id: "انواع گریدهای واکنش‌گرا", label: "انواع گریدهای واکنش‌گرا" },
+          {
+            id: "کاربرد ستون‌ها در گرید‌های واکنش‌گرا",
+            label: "کاربرد ستون‌ها در گرید‌های واکنش‌گرا"
+          },
+          { id: "رفتار", label: "رفتار" }
+        ]}
+      >
+        {page}
+      </WithTableOfContent>
+    )
+};
+
+<Head>
+  {setTitleMeta(`${meta.title} | دیزاین سیستم سنّت`)}
+  {setDescriptionMeta(meta.description)}
+  {setCanonicalMeta(
+    `${siteFullAddress}/foundation/layout/grid-and-breakpoints`
+  )}
+  {setKeywordsMeta([
+    ...defaultKeywordsMetaContent,
+    "layout",
+    "grid",
+    "breakpoints",
+    "واکنش‌گرا",
+    "ریسپانسیو",
+    "گرید",
+    "نقاط شکست",
+    "چیدمان"
+  ])}
+</Head>
+
+<h1>
+  <span>{meta.title}</span>
+  <AnchorButton anchorId="معرفی" />
+</h1>
+
+<p>{meta.description}</p>
+
+<h2>
+  <span>گرید واکنش‌گرا (Responsive Grid)</span>
+  <AnchorButton anchorId="گرید واکنش‌گرا" />
+</h2>
+
+<p>
+  گرید چیدمانی دوبُعدی و یکی از اجزاء اصلی در دیزاین سیستم برای نمایش موقعیت
+  هماهنگ و پیوستگی عناصر صفحه است. گرید واکنش‌گرا به‌شکلی پویا چیدمان را براساس
+  اندازهٔ صفحه‌‌نمایش تغییر می‌دهد. تراز کردن عناصر با گرید صفحه باعث می‌شود
+  محتوای اصلی در مرکز صفحه قرار گیرد و تمرکز کاربر مخدوش نشود. رفتار گرید از
+  رفتار اجزاء تشکیل‌دهندهٔ آن تبعیت می‌کند.
+</p>
+
+<h3>
+  <span>اجزای تشکیل‌دهندهٔ گرید</span>
+  <AnchorButton anchorId="اجزای تشکیل‌دهندهٔ گرید" />
+</h3>
+
+<p>گرید از ۳ بخش اصلی تشکیل شده است:</p>
+
+<Image
+  imageProps={{
+    src: "/static/media/layout-grid-elements.svg",
+    alt: "اجزای تشکیل‌دهنده گرید",
+    unoptimized: true,
+    width: 860,
+    height: 398
+  }}
+/>
+
+<p>
+  <strong>۱. ستون (Column):</strong> ستون‌ها گریدها را می‌سازند و تعداد آن‌ها در
+  سنّت ۱۲ عدد است. عرض هر ستون با توجه به نقاط شکست تغییر می‌کند.
+  <br />
+  <strong>۲. گاتر (Gutter):</strong> فاصلهٔ خالی و ثابت بین ستون‌ها را گاتر
+  می‌گویند. در سنّت عرض هر گاتر 16px است.
+  <br />
+  <strong>۳. حاشیه (Margin):</strong> حاشیه فضای بیرونی گرید است و در سنّت با
+  توجه به نقاط شکست، عرض حاشیه‌ها می‌تواند برابر یا بزرگ‌تر از گاتر باشد.
+</p>
+
+<Divider dotted />
+
+<h2>
+  <span>انواع گریدهای واکنش‌گرا</span>
+  <AnchorButton anchorId="انواع گریدهای واکنش‌گرا" />
+</h2>
+
+<h3>
+  <span>گرید ثابت (Fixed Grid)</span>
+  <AnchorButton anchorId="گرید ثابت (Fixed Grid)" />
+</h3>
+
+<p>
+  به‌دلیل داشتن عرض ثابت در نقاط شکست مختلف و کنترل بیشتر روی چیدمان صفحه، از
+  این گرید در طراحی و توسعهٔ صفحات ساده‌ و پیش‌بینی‌پذیر استفاده می‌شود. همچنین
+  استفاده از این گرید خوانایی محتوای صفحه را افزایش می‌دهد.
+</p>
+
+<Image
+  imageProps={{
+    src: "/static/media/layout-fixed-grid.svg",
+    alt: "گرید ثابت",
+    unoptimized: true,
+    width: 860,
+    height: 428
+  }}
+/>
+
+<h3>
+  <span>گرید سیّال (Fluid Grid)</span>
+  <AnchorButton anchorId="گرید سیّال (Fluid Grid)" />
+</h3>
+
+<p>
+  به‌دلیل استفادهٔ کامل از عرض صفحه، از این گرید در طراحی و توسعهٔ صفحات پیچیده
+  استفاده می‌شود. در گرید سیال عرض ستون‌ها دائماً در نقاط شکست مختلف کم یا زیاد
+  می‌شود و اندازهٔ محتوا براساس آن تغییر می‌کند.
+</p>
+
+<Image
+  imageProps={{
+    src: "/static/media/layout-fluid-grid.svg",
+    alt: "گرید سیّال",
+    unoptimized: true,
+    width: 860,
+    height: 428
+  }}
+/>
+
+<Divider dotted />
+
+<h2>
+  <span>کاربرد ستون‌ها در گرید‌های واکنش‌گرا</span>
+  <AnchorButton anchorId="کاربرد ستون‌ها در گرید‌های واکنش‌گرا" />
+</h2>
+
+<h3>
+  <span>گسترهٔ ستون‌ها (Column Spanning)</span>
+  <AnchorButton anchorId="گسترهٔ ستون‌ها (Column Spanning)" />
+</h3>
+
+<p>
+  در هر بخش از چیدمان با توجه به ساختار و چینش صفحه، می‌توان تعداد ستون‌های هر
+  جزء آن بخش را گسترش داد. این اجزاء به کمک گاترها از هم جدا می‌شوند. در نقاط
+  شکست می‌توان تعداد ستون‌ها را تغییر داد.
+</p>
+
+<Image
+  imageProps={{
+    src: "/static/media/layout-column-spanning.svg",
+    alt: "گسترهٔ ستون‌ها",
+    unoptimized: true,
+    width: 860,
+    height: 428
+  }}
+/>
+
+<h3>
+  <span>اُفست (Offset)</span>
+  <AnchorButton anchorId="اُفست (Offset)" />
+</h3>
+
+<p>
+  لازم نیست همیشه محتوای صفحه در ۱۲ ستون قرار بگیرد و گاهی اوقات می‌تواند فضای
+  کوچک‌تری را در مرکز صفحه اشغال کند. برای مثال محتوا می‌تواند در ۸ ستون وسط
+  قرار بگیرد و دو ستون در اطراف آن خالی باشد.
+</p>
+
+<Image
+  imageProps={{
+    src: "/static/media/layout-column-offset.svg",
+    alt: "گسترهٔ ستون‌ها",
+    unoptimized: true,
+    width: 860,
+    height: 428
+  }}
+/>
+
+<h3>
+  <span>نقاط شکست (Breakpoints)</span>
+  <AnchorButton anchorId="نقاط شکست (Breakpoints)" />
+</h3>
+
+<p>
+  در نقاط شکست، طراحی صفحه و نحوهٔ نمایش محتوای آن تغییر می‌کند تا بهینه‌ترین
+  چیدمان را برای بهترین تجربهٔ کاربر ارائه دهد. عرض ستون‌ها، گاترها و حاشیه‌ها
+  در نقاط شکست برای هر صفحه‌نمایش متفاوت است. در سنّت ۶ نقطهٔ شکست وجود دارد.
+</p>
+
+<table layout="fixed">
+  <caption>نقاط شکست دیزاین سیستم سنّت</caption>
+  <thead>
+    <tr>
+      <th>بازه</th>
+      <th>نام بازه</th>
+      <th>عرض گرید ثابت</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>519 - 320</td>
+      <td>xxs</td>
+      <td>100%</td>
+    </tr>
+    <tr>
+      <td>520 - 767</td>
+      <td>xs</td>
+      <td>100%</td>
+    </tr>
+    <tr>
+      <td>768 - 959</td>
+      <td>sm</td>
+      <td>100%</td>
+    </tr>
+    <tr>
+      <td>960 - 1023</td>
+      <td>md</td>
+      <td>768px</td>
+    </tr>
+    <tr>
+      <td>1024 - 1365</td>
+      <td>lg</td>
+      <td>960px</td>
+    </tr>
+    <tr>
+      <td>≥ 1366</td>
+      <td>xlg</td>
+      <td>1184px</td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td colSpan="3">
+        <ul>
+          <li>تعداد ستون‌های سنّت در هر نقطهٔ شکست ۱۲ عدد است.</li>
+          <li>
+            عرض هر گاتر سنّت مقدار ثابت 16px است. 8px از راست و 8px از چپ.
+          </li>
+          <li>
+            چیدمان صفحه در هر بازه، رفتار مقدار کمینهٔ نقطه‌ شکست را در آن بازه
+            ارث می‌برد.
+          </li>
+        </ul>
+      </td>
+    </tr>
+  </tfoot>
+</table>
+
+<h2>
+  <span>رفتار</span>
+  <AnchorButton anchorId="رفتار" />
+</h2>
+
+<p>
+  در راهنمای زیر رفتار گریدهای واکنش‌گرا در کاربردهای مختلف دیزاین توضیح داده
+  شده است.
+</p>
+
+<div data-columnWrapper>
+  <Row>
+    <Column all="12" sm="6">
+      <div data-column>
+        <Behaviour
+          variant="dont"
+          caption="در گرید واکنش‌گرا لازم نیست تمام کامپوننت‌ها با ستون‌ها هم‌تراز باشند."
+          imageProps={{
+            src: "/static/media/layout-behaviour-1.svg",
+            alt: "در گرید واکنش‌گرا لازم نیست تمام کامپوننت‌ها با ستون‌ها هم‌تراز باشند.",
+            unoptimized: true,
+            width: 422,
+            height: 360
+          }}
+        />
+      </div>
+    </Column>
+    <Column all="12" sm="6">
+      <div data-column>
+        <Behaviour
+          variant="dont"
+          caption="گاترها فقط برای فاصله‌گذاری بین ستون‌ها و ایجاد فضای خالی کاربرد دارند. چیدمان را از ابتدای هر ستون شروع کنید و نه از ابتدای هر گاتر."
+          imageProps={{
+            src: "/static/media/layout-behaviour-2.svg",
+            alt: "گاترها فقط برای فاصله‌گذاری بین ستون‌ها و ایجاد فضای خالی کاربرد دارند. چیدمان را از ابتدای هر ستون شروع کنید و نه از ابتدای هر گاتر.",
+            unoptimized: true,
+            width: 422,
+            height: 360
+          }}
+        />
+      </div>
+    </Column>
+    <Column all="12">
+      <div data-column>
+        <Behaviour
+          caption="بخش‌هایی با عرض ثابت (مانند منوی کناری) در ستون‌های گرید واکنش‌گرا قرار نمی گیرند و عرضشان تغییر نمی‌کند."
+          imageProps={{
+            src: "/static/media/layout-behaviour-3.svg",
+            alt: "بخش‌هایی با عرض ثابت (مانند منوی کناری) در ستون‌های گرید واکنش‌گرا قرار نمی گیرند و عرضشان تغییر نمی‌کند.",
+            unoptimized: true,
+            width: 860,
+            height: 428
+          }}
+        />
+      </div>
+    </Column>
+  </Row>
+</div>
